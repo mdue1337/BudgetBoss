@@ -14,6 +14,15 @@ config/name="BudgetBoss"
 run/main_scene="res://Scenes/Login and signup/Sign up.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Gs="*res://Scripts/Globals.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
