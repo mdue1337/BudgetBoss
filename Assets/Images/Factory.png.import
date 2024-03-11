@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/andrej-lisakov-V2OyJtFqEtY-unsplash.jpg-2f4db8d260a4e84f46c7ee7367085605.stex"
+path="res://.import/Factory.png-fd50545417b007dcda107883336bcfac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/andrej-lisakov-V2OyJtFqEtY-unsplash.jpg"
-dest_files=[ "res://.import/andrej-lisakov-V2OyJtFqEtY-unsplash.jpg-2f4db8d260a4e84f46c7ee7367085605.stex" ]
+source_file="res://Assets/Images/Factory.png"
+dest_files=[ "res://.import/Factory.png-fd50545417b007dcda107883336bcfac.stex" ]
 
 [params]
 

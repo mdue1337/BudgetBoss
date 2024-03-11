@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu bg.jpg-7d4a854e5a95ddf801f00d1a1c088469.stex"
+path="res://.import/MoonSurface.png-613e422938d6961a4e6d72744fe4fb2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/menu bg.jpg"
-dest_files=[ "res://.import/menu bg.jpg-7d4a854e5a95ddf801f00d1a1c088469.stex" ]
+source_file="res://Assets/Images/MoonSurface.png"
+dest_files=[ "res://.import/MoonSurface.png-613e422938d6961a4e6d72744fe4fb2f.stex" ]
 
 [params]
 
