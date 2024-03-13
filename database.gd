@@ -16,6 +16,7 @@ func _ready():
 	http_request.connect("request_completed",self,"_http_request_completed")
 	get_leaderboard()
 
+
 func _process(delta):
 	if is_requesting:
 		return
@@ -25,14 +26,40 @@ func _process(delta):
 		
 	is_requesting = true
 	
-	_send_request(request_queue.pop_front())
-
+	if nonce == null:
+		request_nonce()
+	else:
+		_send_request(request_queue.pop_front())
+	
+	
+func request_nonce():
+	var client = HTTPClient.new()
+	var data = client.query_string_from_dict({"data" : JSON.print({})})
+	var body = "command=get_nonce&" + data
+	
+	var err = http_request.request(SERVER_URL, SERVER_HEADERS, true, HTTPClient.METHOD_POST, body)
+	
+	if err != OK:
+		printerr("HTTPRequest error: " + String(err))
+		return
+		
+	print("Requeste nonce")
+	
+		
 func _send_request(request: Dictionary):
 	var client = HTTPClient.new()
 	var data = client.query_string_from_dict({"data" : JSON.print(request['data'])})
 	var body = "command=" + request['command'] + "&" + data
 	
+	var cnonce = String(Crypto.new().generate_random_bytes(32)).sha256_text()
+	
+	var client_hash = (nonce + cnonce + body + String(SECRET_KEY)).sha256_text()
+	print(client_hash)
+	nonce = null
+	
 	var headers = SERVER_HEADERS.duplicate()
+	headers.push_back("cnonce: " + cnonce)
+	headers.push_back("hash: " + client_hash)
 	
 	var err = http_request.request(SERVER_URL, headers, true, HTTPClient.METHOD_POST, body)
 		
@@ -52,9 +79,8 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	
 	var response_body = _body.get_string_from_utf8()
 	
+	#$TextEdit.set_text(response_body)
 	var response = parse_json(response_body)
-	
-	print(response)
 
 func create_user():
 	var command = "add_user_login";

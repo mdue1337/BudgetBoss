@@ -1,5 +1,4 @@
 extends TextureButton
-signal Create()
 
 func _on_Button_pressed():
 	print("CreateAccount.gd - button pressed")
@@ -21,10 +20,10 @@ func _on_Button_pressed():
 		
 		print("CreateAccount.gd - attempting login - emitting signal")
 		emit_signal("Create")
-		var success = get_parent().get_parent().get_parent().get_node("Win")
+		var success = get_parent().get_parent().get_parent().get_node("PopupSuccess")
 		success.visible = true
 		get_owner().visible = false
 	else:
-		var popup = get_parent().get_parent().get_parent().get_node("Fail")
+		var popup = get_parent().get_parent().get_parent().get_node("Popup")
 		popup.visible = true
 		print("Please provide valid username, password and email")

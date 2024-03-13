@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skibidi Steve.jpg-b9922e655222f0d06a20ebbe545499e4.stex"
+path="res://.import/europa.png-0cb34329c7d208a97003bdb86e65ba4a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/skibidi Steve.jpg"
-dest_files=[ "res://.import/skibidi Steve.jpg-b9922e655222f0d06a20ebbe545499e4.stex" ]
+source_file="res://Assets/Images/europa.png"
+dest_files=[ "res://.import/europa.png-0cb34329c7d208a97003bdb86e65ba4a.stex" ]
 
 [params]
 
