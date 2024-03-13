@@ -1,4 +1,7 @@
 extends TextureButton
 
 func _on_SignupButton_pressed():
-	get_tree().change_scene("res://Scenes/Login and signup/Sign up.tscn")
+	var signup = get_owner().get_node("SignUp")
+	signup.visible = true
+	var login = get_owner().get_node("LogIn")
+	login.visible = false
