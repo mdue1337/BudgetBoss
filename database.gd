@@ -14,6 +14,7 @@ func _ready():
 	randomize()
 	add_child(http_request)
 	http_request.connect("request_completed",self,"_http_request_completed")
+	get_leaderboard()
 
 func _process(delta):
 	if is_requesting:
@@ -58,23 +59,33 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 func create_user():
 	var command = "add_user_login";
 	var password = String("password".to_utf8()).sha256_text()
-	var data = {"email": 'test@gmail.com', "name": 'test', "secret": password}
+	var data = {"email": 'test@gmail.com', "test": 'hans', "secret": password}
 	request_queue.push_back({"command" : command, "data" : data})
 	
 func get_user():
 	var command = "get_user_login";
 	var password = String("password".to_utf8()).sha256_text()
-	var data = {"email": 'test@gmail.com', "name": 'test', "secret": password}
+	print(password)
+	var data = {"email": 'test@gmail.com', "secret": password}
 	request_queue.push_back({"command" : command, "data" : data})
 
 func get_leaderboard():
-	request_queue.push_back({})
+	var command = "get_leaderboard"
+	var data = {}
+	request_queue.push_back({"command" : command, "data" : data})
 	
 func add_user_to_leaderboard():
-	request_queue.push_back({})
+	var command = "add_user_to_leaderboard"
+	var userId = 1 # change
+	var gameId = 1 # change
+	var data = {"userId": userId, "gameId": gameId}
+	request_queue.push_back({"command" : command, "data" : data})
 
 func create_game():
-	request_queue.push_back({})
+	var command = "create_game"
+	var userId = int(1);
+	var data = {"userId": userId};
+	request_queue.push_back({"command" : command, "data" : data})
 
 func load_game():
 	request_queue.push_back({})
