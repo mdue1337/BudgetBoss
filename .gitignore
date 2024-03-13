@@ -21,6 +21,3 @@ mono_crash.*.json
 .DS_Store
 *~
 *.blend1
-
-# alle import filerne
-*.import
