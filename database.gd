@@ -14,6 +14,7 @@ func _ready():
 	randomize()
 	add_child(http_request)
 	http_request.connect("request_completed",self,"_http_request_completed")
+	get_leaderboard()
 
 
 func _process(delta):
@@ -81,39 +82,39 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	#$TextEdit.set_text(response_body)
 	var response = parse_json(response_body)
 
-	if response['error'] != "none":
-		printerr("We returned error: " + response['error'])
-		return
-		
-	if response['command'] == "get_nonce":
-		nonce = response['response']['nonce']
-		print("Get nonce: " + response['response']['nonce'])
-		return	
-
-	#$TextEdit.set_text(response_body)
-
-	if response['response']['size'] > 0:
-		$TextEdit.set_text("")
-		for n in (response['response']['size']):
-			$TextEdit.set_text($TextEdit.get_text() + String(response['response'][String(n)]['player_name']) + "\t\t" + String(response['response'][String(n)]['score']) + "\n")
-	else:	
-		$TextEdit.set_text("No data")
-
-func _submit_score():
-	var user_name = $PlayerName.get_text()
-	var score = $Score.get_text()
-	var command = "add_score"
-	var data = {"username" : user_name, "score" : score}
+func create_user():
+	var command = "add_user_login";
+	var password = String("password".to_utf8()).sha256_text()
+	var data = {"email": 'test@gmail.com', "test": 'hans', "secret": password}
+	request_queue.push_back({"command" : command, "data" : data})
+	
+func get_user():
+	var command = "get_user_login";
+	var password = String("password".to_utf8()).sha256_text()
+	print(password)
+	var data = {"email": 'test@gmail.com', "secret": password}
 	request_queue.push_back({"command" : command, "data" : data})
 
-func _get_scores():
-	var command = "get_scores"
-	var data = {"score_ofset" : 0, "score_number" : 10}
+func get_leaderboard():
+	var command = "get_leaderboard"
+	var data = {}
 	request_queue.push_back({"command" : command, "data" : data})
-	print("get scores")
+	
+func add_user_to_leaderboard():
+	var command = "add_user_to_leaderboard"
+	var userId = 1 # change
+	var gameId = 1 # change
+	var data = {"userId": userId, "gameId": gameId}
+	request_queue.push_back({"command" : command, "data" : data})
 
-func _get_player():
-	var user_id = $ID.get_text()
-	var command = "get_player"
-	var data = {"user_id" : user_id}
+func create_game():
+	var command = "create_game"
+	var userId = int(1);
+	var data = {"userId": userId};
 	request_queue.push_back({"command" : command, "data" : data})
+
+func load_game():
+	request_queue.push_back({})
+
+func update_game():
+	request_queue.push_back({})
