@@ -6,11 +6,10 @@
 [ext_resource path="res://Assets/Images/market.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Factory.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/Bank.png" type="Texture" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 165.5, 109.5 )
+[ext_resource path="res://Scenes/Map.gd" type="Script" id=7]
 
 [node name="Map" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -673.0
@@ -22,78 +21,48 @@ texture = ExtResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Camp" type="StaticBody2D" parent="."]
-position = Vector2( -123, 96 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Camp" type="TextureButton" parent="."]
+margin_left = -346.0
+margin_top = -54.0
+margin_right = 353.0
+margin_bottom = 303.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Camp"]
-position = Vector2( 1, -7.62939e-06 )
-scale = Vector2( 0.483193, 0.483193 )
-texture = ExtResource( 2 )
+[node name="Factory" type="TextureButton" parent="."]
+margin_left = -670.0
+margin_top = 183.0
+margin_right = -97.0
+margin_bottom = 618.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 5 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Camp"]
-visible = false
-polygon = PoolVector2Array( -156, 45, -40, -73, 3, -50, 63, -72, 112, 20, 164, 48, 112, 32, 112, 47, -17, 58, -43, 54, -65, 76, -52, 57, -110, 43, -111, 21 )
+[node name="Bank" type="TextureButton" parent="."]
+margin_left = -580.0
+margin_top = -388.0
+margin_right = -10.0
+margin_bottom = 50.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 6 )
 
-[node name="Factory" type="StaticBody2D" parent="."]
-position = Vector2( -524, 381 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Hospital" type="TextureButton" parent="."]
+margin_left = 47.0
+margin_top = -393.0
+margin_right = 648.0
+margin_bottom = 45.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Factory"]
-position = Vector2( 62.1895, -46.4528 )
-scale = Vector2( 0.696769, 0.696769 )
-texture = ExtResource( 5 )
+[node name="Market" type="TextureButton" parent="."]
+margin_left = 236.0
+margin_top = 74.0
+margin_right = 732.0
+margin_bottom = 577.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 4 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Factory"]
-visible = false
-polygon = PoolVector2Array( -79, 1, -83, -67, -8, -135, 54, -182, 77, -177, 208, -82, 222, -61, 222, 8, 77, 77 )
-
-[node name="Bank" type="StaticBody2D" parent="."]
-position = Vector2( -447, -239 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Bank"]
-position = Vector2( 36.2546, -27.0904 )
-scale = Vector2( 0.606893, 0.606893 )
-texture = ExtResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bank"]
-visible = false
-position = Vector2( 40.5, -15.5 )
-shape = SubResource( 1 )
-
-[node name="Hospital" type="StaticBody2D" parent="."]
-position = Vector2( 493, 191 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Hospital"]
-position = Vector2( -31.3942, -22.3687 )
-scale = Vector2( 0.590994, 0.590994 )
-texture = ExtResource( 3 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hospital"]
-visible = false
-polygon = PoolVector2Array( -172, 73, -167, 59, -139, 52, -139, -53, -79, -54, -81, -77, -60, -95, -61, -119, -7, -125, 13, -82, 62, -65, 77, -5, 98, 52, 105, 65 )
-
-[node name="Market" type="StaticBody2D" parent="."]
-position = Vector2( 362, -201 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Market"]
-position = Vector2( 1, -7.62939e-06 )
-scale = Vector2( 0.483193, 0.483193 )
-texture = ExtResource( 4 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Market"]
-visible = false
-polygon = PoolVector2Array( -87, 116, -105, -39, -109, -68, -78, -106, 84, -106, 107, -74, 112, -40, 104, 102 )
+[connection signal="pressed" from="Camp" to="." method="_on_Camp_pressed"]
+[connection signal="pressed" from="Factory" to="." method="_on_Factory_pressed"]
+[connection signal="pressed" from="Bank" to="." method="_on_Bank_pressed"]
+[connection signal="pressed" from="Hospital" to="." method="_on_Hospital_pressed"]
+[connection signal="pressed" from="Market" to="." method="_on_Market_pressed"]
