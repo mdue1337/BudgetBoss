@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 func _on_BackButton_pressed():
-	get_tree().change_scene("res://Scenes/Main_Menu.tscn")
+	get_owner().visible = false
