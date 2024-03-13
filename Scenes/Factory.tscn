@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/Images/Factory.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=2]
 
 [node name="Factory" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -676.0
+margin_top = -475.0
+margin_right = 224.0
+margin_bottom = -115.0
+rect_scale = Vector2( 1.5, 2.5 )
+texture = ExtResource( 2 )
 
 [node name="Factory" type="Sprite" parent="."]
 position = Vector2( 64, -85 )
