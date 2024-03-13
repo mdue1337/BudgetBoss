@@ -11,10 +11,12 @@ var is_requesting : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
 	add_child(http_request)
 	http_request.connect("request_completed",self,"_http_request_completed")
-	get_user()
+	
+	# methods connect
+	Gs.connect("login", self, "get_user");
+	Gs.connect("signup", self, "create_user")
 
 func _process(delta):
 	if is_requesting:
@@ -51,8 +53,8 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	
 	var response_body = _body.get_string_from_utf8()
 	var response = parse_json(response_body)
-	print(response)
-	## handle the response.
+	
+	Gs.emit_signal("response", response);
 
 func create_user():
 	var command = "add_user_login";

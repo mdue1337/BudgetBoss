@@ -1,5 +1,4 @@
 extends TextureButton
-signal Create()
 
 func _on_Button_pressed():
 	print("CreateAccount.gd - button pressed")
@@ -8,19 +7,13 @@ func _on_Button_pressed():
 	var email_input = get_owner().get_node("NinePatchRect/VBoxContainer/Email")
 	
 	if username_input.text != "" and password_input.text != "" and "@" in email_input.text:
-		print("CreateAccount.gd - attempting to create user")
-		Gs.fullname = username_input.text
-		print("Username set to")
-		print(Gs.fullname)
+		Gs.fullName = username_input.text
 		Gs.password = password_input.text
-		print("Password set to")
-		print(Gs.password)
 		Gs.email = email_input.text
-		print("Email set to")
-		print(Gs.email)
 		
-		print("CreateAccount.gd - attempting login - emitting signal")
-		emit_signal("Create")
+		Gs.emit_signal("signup")
+		Gs.connect("response", self, "handle_response")
+		
 		var success = get_parent().get_parent().get_parent().get_node("Win")
 		success.visible = true
 		get_owner().visible = false
@@ -28,3 +21,6 @@ func _on_Button_pressed():
 		var popup = get_parent().get_parent().get_parent().get_node("Fail")
 		popup.visible = true
 		print("Please provide valid username, password and email")
+
+func handle_response(response):
+	print(response)
