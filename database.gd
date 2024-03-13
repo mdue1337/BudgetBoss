@@ -17,6 +17,7 @@ func _ready():
 	# methods connect
 	Gs.connect("login", self, "get_user");
 	Gs.connect("signup", self, "create_user")
+	Gs.connect("get_leaderboard", self, "get_leaderboard")
 
 func _process(delta):
 	if is_requesting:

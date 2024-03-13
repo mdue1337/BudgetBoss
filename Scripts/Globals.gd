@@ -14,3 +14,4 @@ var upgrades : int;
 signal response()
 signal login()
 signal signup()
+signal get_leaderboard()
