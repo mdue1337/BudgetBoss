@@ -59,10 +59,10 @@ custom_fonts/font = SubResource( 1 )
 text = "Pay Bills"
 
 [node name="Bills" type="TextureButton" parent="."]
-margin_left = 109.0
-margin_top = -108.0
-margin_right = 721.0
-margin_bottom = 388.0
+margin_left = 203.0
+margin_top = -77.0
+margin_right = 574.0
+margin_bottom = 319.0
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 4 )
 
