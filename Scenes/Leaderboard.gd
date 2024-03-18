@@ -31,22 +31,32 @@ func bubblesort(data, param):
 	return data
 
 func updateMoney(data):
-	for i in range (1): # skal være 5
+	var count = data.size()
+	
+	if(count > 5):
+		count = 5;
+	
+	for i in range (count):
 		var label_text = str(data[i].Money) + "$ by: " + str(data[i].Name)
 		
-		if i == 0:
-			$VBoxContainer/Label.text = label_text
-		else:
-			var label = Label.new()
-			label.text = label_text
-			$VBoxContainer.add_child(label)
-
-func updateDays(data):
-	for i in range (1): # skal være 5
-		var label_text = str(data[i].Days) + " days by: " + str(data[i].Name)
 		if i == 0:
 			$VBoxContainer2/Label.text = label_text
 		else:
 			var label = Label.new()
 			label.text = label_text
 			$VBoxContainer2.add_child(label)
+
+func updateDays(data):
+	var count = data.size()
+	
+	if(count > 5):
+		count = 5;
+	
+	for i in range (count):
+		var label_text = str(data[i].Days) + " days by: " + str(data[i].Name)
+		if i == 0:
+			$VBoxContainer3/Label.text = label_text
+		else:
+			var label = Label.new()
+			label.text = label_text
+			$VBoxContainer3.add_child(label)
