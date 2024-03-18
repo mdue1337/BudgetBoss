@@ -11,6 +11,7 @@ var moneyPerson : int;
 var days : int;
 var upgrades : int;
 var bills : int;
+var radioParts : int;
 
 # signaler db
 signal response()
