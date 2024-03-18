@@ -118,17 +118,17 @@ text = "BudgetBoss"
 
 [node name="SignUp" parent="." instance=ExtResource( 2 )]
 visible = false
-margin_left = 360.0
-margin_top = 17.0
-margin_right = 363.0
-margin_bottom = 19.0
+margin_left = 400.0
+margin_top = -20.0
+margin_right = 403.0
+margin_bottom = -18.0
 
 [node name="LogIn" parent="." instance=ExtResource( 9 )]
 visible = false
-margin_left = 356.0
-margin_top = -22.0
-margin_right = 356.0
-margin_bottom = -22.0
+margin_left = 400.0
+margin_top = -20.0
+margin_right = 400.0
+margin_bottom = -20.0
 
 [connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/LoginButton" to="TextureRect/VBoxContainer/HBoxContainer/LoginButton" method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer2/SignupButton" to="TextureRect/VBoxContainer/HBoxContainer2/SignupButton" method="_on_SignupButton_pressed"]
