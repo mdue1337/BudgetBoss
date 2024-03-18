@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Scripts/DepositButton.gd" type="Script" id=12]
 [ext_resource path="res://Scripts/GoToMenu.gd" type="Script" id=13]
 [ext_resource path="res://Scripts/DepositAll.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/BillsButton.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/Pay_Bills.gd" type="Script" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -39,6 +41,9 @@ size = 25
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 1 )
 
 [node name="Bank" type="Node2D"]
@@ -78,6 +83,7 @@ margin_right = 574.0
 margin_bottom = 319.0
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 8 )
+script = ExtResource( 15 )
 
 [node name="Label4" type="Label" parent="Bills"]
 margin_left = 53.75
@@ -161,6 +167,7 @@ __meta__ = {
 }
 
 [node name="Pay Bills" type="TextureRect" parent="."]
+visible = false
 margin_left = 195.0
 margin_top = -227.0
 margin_right = 803.0
@@ -194,7 +201,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DepositAll" type="TextureButton" parent="Pay Bills"]
+[node name="PayAll" type="TextureButton" parent="Pay Bills"]
 margin_left = 120.0
 margin_top = 107.0
 margin_right = 288.0
@@ -202,26 +209,34 @@ margin_bottom = 195.0
 rect_scale = Vector2( 2, 1 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="Pay Bills/DepositAll"]
+[node name="Label" type="Label" parent="Pay Bills/PayAll"]
 margin_right = 170.0
 margin_bottom = 82.0
 custom_fonts/font = SubResource( 4 )
-text = "Martin Fiks det sådan at
-der dynamisk laves 
-knapper efter hvilke
-bills der er 
-mange tak"
+text = "Pay all"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Label2" type="Label" parent="Pay Bills/PayAll"]
+margin_left = 20.0
+margin_top = 100.0
+margin_right = 148.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 5 )
+text = "HEJ MARTIN DUE 
+DU ER GRIM"
+
 [connection signal="pressed" from="Deposit" to="Deposit" method="_on_Deposit_pressed"]
+[connection signal="pressed" from="Bills" to="Bills" method="_on_Bills_pressed"]
 [connection signal="pressed" from="Deposit Cash/BackButton" to="Deposit Cash/BackButton" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Deposit Cash/DepositAll" to="Deposit Cash/DepositAll" method="_on_DepositAll_pressed"]
 [connection signal="pressed" from="Pay Bills/BackButton" to="Pay Bills/BackButton" method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Pay Bills/PayAll" to="Pay Bills/PayAll" method="_on_PayAll_pressed"]

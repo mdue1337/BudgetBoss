@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/bed.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/Other/DefaultCartoonFont.tres" type="Theme" id=6]
 [ext_resource path="res://Scripts/Camp.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/MapButton.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -83,7 +84,7 @@ theme = ExtResource( 6 )
 custom_fonts/font = SubResource( 2 )
 text = "Radio"
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 margin_left = -111.0
 margin_top = -354.0
 margin_right = 112.0
@@ -92,4 +93,19 @@ theme = ExtResource( 6 )
 custom_fonts/font = SubResource( 1 )
 text = "Camp"
 
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_left = 405.0
+margin_top = 331.0
+margin_right = 857.0
+margin_bottom = 460.0
+theme = ExtResource( 6 )
+window_title = "Nam Nam!"
+dialog_text = "Food was delicious...
+Hunger level has decreased!"
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -659, -465 )
+
 [connection signal="pressed" from="Radio" to="." method="_on_Radio_pressed"]
+[connection signal="pressed" from="Bonfire" to="." method="_on_Bonfire_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

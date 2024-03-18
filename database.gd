@@ -91,5 +91,5 @@ func load_game():
 
 func update_game():
 	var command = "update_game"
-	var data = {"userId": int(Gs.userId), "money": int(Gs.money), "days": int(Gs.days), "upgrades": int(Gs.upgrades)}
+	var data = {"userId": int(Gs.userId), "money": int(Gs.money), "days": int(Gs.days), "upgrades": int(Gs.upgrades), "bills" : int(Gs.bills), "work" : int(Gs.work), "radioparts": int(Gs.radioParts), "hunger" : int(Gs.hunger)}
 	request_queue.push_back({"command" : command, "data" : data})
