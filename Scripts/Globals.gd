@@ -10,6 +10,7 @@ var moneyBank : int;
 var moneyPerson : int;
 var days : int;
 var upgrades : int;
+var radioParts : int;
 
 # signaler db
 signal response()
