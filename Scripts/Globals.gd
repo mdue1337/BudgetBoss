@@ -12,6 +12,8 @@ var days : int;
 var upgrades : int;
 var bills : int;
 var radioParts : int;
+var work : int;
+var hunger : int;
 
 # signaler db
 signal response()
