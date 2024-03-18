@@ -132,14 +132,20 @@ texture_hover = ExtResource( 1 )
 script = ExtResource( 5 )
 
 [node name="Fail" type="AcceptDialog" parent="."]
-margin_right = 83.0
-margin_bottom = 58.0
-dialog_text = "PLACEHOLDERPLACEHOLDERPLACEHOLDERPLACEHOLDERPLACEHOLDERPLACEHOLDERPLACEHOLDER"
+visible = true
+margin_left = 559.0
+margin_top = 294.0
+margin_right = 642.0
+margin_bottom = 352.0
+dialog_text = "Fail"
 
 [node name="Win" type="AcceptDialog" parent="."]
-margin_right = 83.0
-margin_bottom = 58.0
-dialog_text = "PLACEHOLDERPLACEHOLDERPLACEHOLDERPLACEHOLDER"
+visible = true
+margin_left = 391.0
+margin_top = 317.0
+margin_right = 775.0
+margin_bottom = 375.0
+dialog_text = "Win"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]

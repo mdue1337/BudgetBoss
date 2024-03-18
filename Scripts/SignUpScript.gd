@@ -14,11 +14,11 @@ func _on_Button_pressed():
 		Gs.emit_signal("signup")
 		Gs.connect("response", self, "handle_response")
 		
-		var success = get_parent().get_parent().get_parent().get_node("Win")
+		var success = get_parent().get_node("Win")
 		success.visible = true
 		get_owner().visible = false
 	else:
-		var popup = get_parent().get_parent().get_parent().get_node("Fail")
+		var popup = get_parent().get_node("Fail")
 		popup.visible = true
 		print("Please provide valid username, password and email")
 
