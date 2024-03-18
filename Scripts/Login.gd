@@ -31,7 +31,5 @@ func _on_Button_pressed():
 		popup.visible = true
 
 func handle_response(response):
-	print("PRINTING FULL RESPONSE: ")
-	print(response)
 	print(response.response["data"][0]["Id"])
 	Gs.userId = int(response.response["data"][0]["Id"])
