@@ -167,6 +167,7 @@ __meta__ = {
 }
 
 [node name="Pay Bills" type="TextureRect" parent="."]
+visible = false
 margin_left = 195.0
 margin_top = -227.0
 margin_right = 803.0
