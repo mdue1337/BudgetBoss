@@ -4,14 +4,19 @@ extends Node
 var fullName : String = "error"
 var password : String = "test";
 var email : String  = "test@gmail.com";
-var userId : int = 1;
+var userId : int;
 var gameId : int;
-var money : int;
+var moneyBank : int;
+var moneyPerson : int;
 var days : int;
 var upgrades : int;
 
-# signaler
+# signaler db
 signal response()
 signal login()
 signal signup()
 signal get_leaderboard()
+
+# signaler other
+signal dayCounter()
+signal moneyCounter()
