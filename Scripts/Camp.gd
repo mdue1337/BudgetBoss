@@ -12,7 +12,6 @@ func _on_TextureButton_pressed():
 func _on_Bonfire_pressed():
 	get_node("AcceptDialog").visible = true
 	Gs.emit_signal("hungerCounter")
-	get_tree().change_scene("res://Scenes/Map.tscn")
 
 func wait(milliseconds: float) -> void:
 	OS.delay_msec(milliseconds)
