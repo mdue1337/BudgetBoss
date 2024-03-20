@@ -18,6 +18,8 @@ func _ready():
 	Gs.connect("login", self, "get_user");
 	Gs.connect("signup", self, "create_user")
 	Gs.connect("get_leaderboard", self, "get_leaderboard")
+	Gs.connect("create_game", self, "create_game")
+	Gs.connect("load_game", self, "load_game")
 
 func _process(delta):
 	if is_requesting:
