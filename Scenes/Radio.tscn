@@ -75,7 +75,6 @@ text = "Fix Radio
 "
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
-visible = true
 margin_left = 319.0
 margin_top = 99.0
 margin_right = 962.0
