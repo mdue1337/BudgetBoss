@@ -24,3 +24,4 @@ signal get_leaderboard()
 # signaler other
 signal dayCounter()
 signal moneyCounter()
+signal hungerCounter()
