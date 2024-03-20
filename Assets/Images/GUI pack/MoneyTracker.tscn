@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Images/MoneyTracker.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Images/GUI pack/MoneyTracker.gd" type="Script" id=1]
+[ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )

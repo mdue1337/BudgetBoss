@@ -9,4 +9,4 @@ func updateMoney():
 	displayDays()
 
 func displayDays():
-	$Label.text = "Money: " + str(Gs.moneyPerson)
+	$Label.text = "Money: " + str(Gs.moneyPerson) + "$"

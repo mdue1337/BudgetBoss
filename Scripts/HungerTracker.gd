@@ -11,4 +11,4 @@ func updateHunger(count : int):
 	displayHunger()
 
 func displayHunger():
-	$Label.text = "Hunger: " + str(Gs.hunger) + " out of 10"
+	$Label.text = "Hunger: " + str(Gs.hunger) + "/10"
