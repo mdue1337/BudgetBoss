@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Images/MoonSurface.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Camp.png" type="Texture" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://Assets/Images/Factory.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/Bank.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Map.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/InfoBar.tscn" type="PackedScene" id=8]
 
 [node name="Map" type="Node2D"]
+position = Vector2( 676, 428 )
 script = ExtResource( 7 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -17,9 +19,6 @@ margin_top = -425.0
 margin_right = 681.0
 margin_bottom = 465.0
 texture = ExtResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
 
 [node name="Camp" type="TextureButton" parent="."]
 margin_left = -346.0
@@ -60,6 +59,9 @@ margin_right = 732.0
 margin_bottom = 577.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 4 )
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -678, -427 )
 
 [connection signal="pressed" from="Camp" to="." method="_on_Camp_pressed"]
 [connection signal="pressed" from="Factory" to="." method="_on_Factory_pressed"]

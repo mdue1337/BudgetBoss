@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/bed.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Assets/Other/DefaultCartoonFont.tres" type="Theme" id=6]
 [ext_resource path="res://Scripts/Camp.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/MapButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/InfoBar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SleepConfirm.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/AcceptDialog.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -102,10 +105,29 @@ theme = ExtResource( 6 )
 window_title = "Nam Nam!"
 dialog_text = "Food was delicious...
 Hunger level has decreased!"
+script = ExtResource( 11 )
 
-[node name="Node2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( -659, -465 )
+[node name="SleepConfirm" type="AcceptDialog" parent="."]
+margin_left = 405.0
+margin_top = 331.0
+margin_right = 857.0
+margin_bottom = 460.0
+theme = ExtResource( 6 )
+window_title = "Zzzzz..."
+dialog_text = "             
+			               Good Night
+			       Another Day In Sight
+"
+script = ExtResource( 10 )
+
+[node name="MapButton" parent="." instance=ExtResource( 8 )]
+position = Vector2( 464, -457 )
+
+[node name="Node2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( -665, -473 )
 
 [connection signal="pressed" from="Radio" to="." method="_on_Radio_pressed"]
 [connection signal="pressed" from="Bonfire" to="." method="_on_Bonfire_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_AcceptDialog_confirmed"]
+[connection signal="confirmed" from="SleepConfirm" to="SleepConfirm" method="_on_SleepConfirm_confirmed"]
