@@ -15,6 +15,7 @@ var radioParts : int;
 var work : int;
 var hunger : int;
 var hasWorkedToday : bool = false;
+var illnessLevel : int = 0;
 
 # signaler db
 signal response()

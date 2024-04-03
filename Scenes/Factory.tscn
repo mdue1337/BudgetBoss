@@ -77,7 +77,6 @@ custom_fonts/font = ExtResource( 5 )
 text = "Minigame 3"
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
-visible = true
 margin_left = 206.0
 margin_top = 283.0
 margin_right = 533.0
