@@ -124,7 +124,7 @@ script = ExtResource( 10 )
 position = Vector2( -640, -375 )
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( -665, -473 )
+position = Vector2( -688, -475 )
 
 [connection signal="pressed" from="Radio" to="." method="_on_Radio_pressed"]
 [connection signal="pressed" from="Bonfire" to="." method="_on_Bonfire_pressed"]

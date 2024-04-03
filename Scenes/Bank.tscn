@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scripts/DepositAll.gd" type="Script" id=14]
 [ext_resource path="res://Scripts/BillsButton.gd" type="Script" id=15]
 [ext_resource path="res://Scripts/Pay_Bills.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/InfoBar.tscn" type="PackedScene" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -105,7 +106,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Bank"
 
 [node name="MapButton" parent="." instance=ExtResource( 6 )]
-position = Vector2( -636, -437 )
+position = Vector2( 390, -390 )
 
 [node name="Deposit Cash" type="TextureRect" parent="."]
 visible = false
@@ -244,6 +245,9 @@ margin_left = -583.0
 margin_top = 24.0
 margin_right = -500.0
 margin_bottom = 82.0
+
+[node name="Node2D" parent="." instance=ExtResource( 17 )]
+position = Vector2( -688, -476 )
 
 [connection signal="pressed" from="Deposit" to="Deposit" method="_on_Deposit_pressed"]
 [connection signal="pressed" from="Bills" to="Bills" method="_on_Bills_pressed"]
