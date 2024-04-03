@@ -234,6 +234,17 @@ custom_fonts/font = SubResource( 5 )
 text = "HEJ MARTIN DUE 
 DU ER GRIM"
 
+[node name="Win" type="AcceptDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -583.0
+margin_top = 24.0
+margin_right = -500.0
+margin_bottom = 82.0
+
 [connection signal="pressed" from="Deposit" to="Deposit" method="_on_Deposit_pressed"]
 [connection signal="pressed" from="Bills" to="Bills" method="_on_Bills_pressed"]
 [connection signal="pressed" from="Deposit Cash/BackButton" to="Deposit Cash/BackButton" method="_on_BackButton_pressed"]
