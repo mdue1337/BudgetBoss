@@ -1,6 +1,5 @@
 extends Node2D
 
-# Define the scenes you want to transition to
 var hospital_scene = preload("res://Scenes/Hospital.tscn")
 var bank_scene = preload("res://Scenes/Bank.tscn")
 var market_scene = preload("res://Scenes/Market.tscn")
