@@ -121,7 +121,7 @@ dialog_text = "
 script = ExtResource( 10 )
 
 [node name="MapButton" parent="." instance=ExtResource( 8 )]
-position = Vector2( 464, -457 )
+position = Vector2( -651, -404 )
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( -665, -473 )
