@@ -20,6 +20,7 @@ func _ready():
 	Gs.connect("get_leaderboard", self, "get_leaderboard")
 	Gs.connect("create_game", self, "create_game")
 	Gs.connect("load_game", self, "load_game")
+	Gs.connect("save_game", self, "update_game")
 
 func _process(delta):
 	if is_requesting:
@@ -93,5 +94,5 @@ func load_game():
 
 func update_game():
 	var command = "update_game"
-	var data = {"userId": int(Gs.userId), "money": int(Gs.money), "days": int(Gs.days), "upgrades": int(Gs.upgrades), "bills" : int(Gs.bills), "work" : int(Gs.work), "radioparts": int(Gs.radioParts), "hunger" : int(Gs.hunger)}
+	var data = {"userId": int(Gs.userId), "gameId": int(Gs.gameId), "money": int(Gs.moneyBank), "days": int(Gs.days), "upgrades": int(Gs.upgrades), "bills" : int(Gs.bills), "work" : int(Gs.work), "radioparts": int(Gs.radioParts), "hunger" : int(Gs.hunger)}
 	request_queue.push_back({"command" : command, "data" : data})

@@ -24,6 +24,7 @@ signal signup()
 signal get_leaderboard()
 signal create_game()
 signal load_game()
+signal save_game()
 
 # signaler other
 signal dayCounter()
