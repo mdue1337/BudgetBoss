@@ -121,6 +121,7 @@ margin_left = 563.0
 margin_top = 290.0
 margin_right = 646.0
 margin_bottom = 348.0
+dialog_text = "User not found or nothing was."
 
 [node name="Win" type="AcceptDialog" parent="."]
 margin_left = 549.0

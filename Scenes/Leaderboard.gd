@@ -8,14 +8,18 @@ func _ready():
 	Gs.connect("response", self, "handle_response")
 
 func handle_response(response):
-	var data = response.response["data"]
-	print(data[0].Money)
-	money = bubblesort(data, "Money")
-	days = bubblesort(data, "Days")
-	print(money)
-	print(days)
-	updateMoney(money)
-	updateDays(days)
+	print(response)
+	if response.error != "database_error":
+		var data = response.response["data"]
+		print(data[0].Money)
+		money = bubblesort(data, "Money")
+		days = bubblesort(data, "Days")
+		print(money)
+		print(days)
+		updateMoney(money)
+		updateDays(days)
+	else:
+		print("nothing returned from database")
 
 func bubblesort(data, param):
 	var n = data.size()

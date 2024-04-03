@@ -15,6 +15,22 @@ func _on_Button_pressed():
 		# emit signal til database
 		Gs.emit_signal("login")
 		Gs.connect("response", self, "handle_response")
+	else:
+		var popup = get_parent().get_node("Lose")
+		popup.visible = true
+		popup.dialog_text = "Please enter some info"
+
+func handle_response(response):
+	print(response)
+	if response.error == "database_error":
+		print("Nothing Written!")
+		var popup = get_parent().get_node("Lose")
+		popup.visible = true
+		popup.dialog_text = "User not found"
+	else:
+		print(response.response["data"][0]["Id"])
+		Gs.userId = int(response.response["data"][0]["Id"])
+		Gs.fullName = String(response.response["data"][0]["Name"])
 		
 		#Gemmer login screen, da det er en popup over en anden scene
 		var loginscreen = get_parent()
@@ -23,13 +39,3 @@ func _on_Button_pressed():
 		#viser success popup
 		var success = get_parent().get_node("Win")
 		success.visible = true
-		
-	else:
-		#viser fail popup
-		print("Nothing Written!")
-		var popup = get_parent().get_node("Lose")
-		popup.visible = true
-
-func handle_response(response):
-	print(response.response["data"][0]["Id"])
-	Gs.userId = int(response.response["data"][0]["Id"])
