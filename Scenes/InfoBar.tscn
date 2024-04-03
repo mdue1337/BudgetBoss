@@ -14,16 +14,18 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_scale = Vector2( 2, 0.4 )
+margin_left = -9.0
+margin_top = -1.0
+margin_right = 599.0
+margin_bottom = 167.0
+rect_scale = Vector2( 2.2, 0.4 )
 texture = ExtResource( 2 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
-margin_left = 9.0
-margin_top = -22.0
-margin_right = 613.0
-margin_bottom = 138.0
+margin_left = 8.18182
+margin_top = -22.5
+margin_right = 612.182
+margin_bottom = 137.5
 
 [node name="MoneyCounter" parent="TextureRect/HBoxContainer" instance=ExtResource( 1 )]
 visible = false
@@ -50,8 +52,9 @@ margin_bottom = 160.0
 [node name="UniLabel" type="Label" parent="TextureRect"]
 margin_left = 9.0
 margin_top = 20.0
-margin_right = 9.0
+margin_right = 1153.0
 margin_bottom = 61.0
 rect_scale = Vector2( 0.5, 3 )
 custom_fonts/font = ExtResource( 7 )
+align = 1
 script = ExtResource( 3 )
