@@ -14,6 +14,7 @@ var bills : int;
 var radioParts : int;
 var work : int;
 var hunger : int;
+var hasWorkedToday : bool = false;
 
 # signaler db
 signal response()

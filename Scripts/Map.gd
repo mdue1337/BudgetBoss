@@ -11,7 +11,12 @@ func _on_Camp_pressed():
 	get_tree().change_scene("res://Scenes/Camp.tscn")
 
 func _on_Factory_pressed():
-	get_tree().change_scene("res://Scenes/Factory.tscn")
+	if (Gs.hasWorkedToday == false):
+		get_tree().change_scene("res://Scenes/Factory.tscn")
+	else:
+		print(str(get_node("AcceptDialog").visible))
+		get_node("AcceptDialog").visible = true
+		print("det må du ikke fister løjsovs")
 
 func _on_Bank_pressed():
 	get_tree().change_scene("res://Scenes/Bank.tscn")
