@@ -18,6 +18,10 @@ var hasWorkedToday : bool = false;
 var illnessLevel : int;
 var medicineCount : int;
 
+# shop
+var upgradePricesWork : Array = [500, 1100, 2430];
+var upgradePricesRadio : Array = [2000, 2980, 3410, 4000, 6000]
+
 # signaler db
 signal response()
 signal login()
