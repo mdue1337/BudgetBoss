@@ -14,7 +14,7 @@ margin_top = 1.0
 margin_right = 252.0
 margin_bottom = 251.0
 rect_scale = Vector2( 2.5, 2.5 )
-color = Color( 1, 1, 1, 0.215686 )
+color = Color( 0.309804, 0.25098, 0.74902, 1 )
 
 [node name="Label" type="Label" parent="ColorRect"]
 margin_left = 90.0
@@ -51,10 +51,10 @@ scale = Vector2( 0.0930555, 0.0930555 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="ColorRect/Medicine"]
-margin_left = -3.0
-margin_top = -15.0
-margin_right = 37.0
-margin_bottom = -1.0
+margin_left = -1.2
+margin_top = 34.8
+margin_right = 38.8
+margin_bottom = 48.8
 
 [node name="RadioParts" type="Panel" parent="ColorRect"]
 margin_left = 25.0

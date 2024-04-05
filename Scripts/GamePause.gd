@@ -1,7 +1,7 @@
 extends Control
 
 func _on_Inventory_pressed():
-	pass # Replace with function body.
+	get_node("Inventory").visible = true;
 
 func _on_ExitBtn_pressed():
 	$CenterContainer/VBoxContainer/ExitBtn/SaveGameConfirm.visible = true
