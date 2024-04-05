@@ -1,5 +1,9 @@
 extends Node2D
 
+func _ready():
+	
+	pass
+
 var hospital_scene = preload("res://Scenes/Hospital.tscn")
 var bank_scene = preload("res://Scenes/Bank.tscn")
 var market_scene = preload("res://Scenes/Market.tscn")

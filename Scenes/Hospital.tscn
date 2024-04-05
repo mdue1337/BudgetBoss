@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Images/Hospital.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Assets/Images/GUI pack/ArrowLeft/Hover.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/GUI pack/Panel/Window/Big.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/BuyMedicineMenu.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/IndlagtButton.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/Indlæg.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/cheats.gd" type="Script" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -47,6 +50,7 @@ margin_right = 745.0
 margin_bottom = 287.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 1 )
+script = ExtResource( 15 )
 
 [node name="Label" type="Label" parent="Hospital"]
 margin_left = 97.1428
@@ -64,6 +68,7 @@ position = Vector2( -693, -472 )
 position = Vector2( -648, -390 )
 
 [node name="Hospital2" type="TextureButton" parent="."]
+visible = false
 margin_left = -583.0
 margin_top = -35.0
 margin_right = 18.0001
@@ -151,7 +156,6 @@ text = "Noget er gået
 ruskravene galt"
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
-visible = true
 margin_left = 464.0
 margin_top = 411.0
 margin_right = 547.0
@@ -160,6 +164,7 @@ dialog_text = "Du har ingen sygdomme!
 brug pængene på en god bog eller spar dem op!"
 
 [node name="Bliv indlagt" type="TextureRect" parent="."]
+visible = false
 margin_left = -139.0
 margin_top = -287.0
 margin_right = 469.0
@@ -193,7 +198,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BuyMedicine" type="TextureButton" parent="Bliv indlagt"]
+[node name="Indlæg" type="TextureButton" parent="Bliv indlagt"]
 margin_left = 120.0
 margin_top = 107.0
 margin_right = 288.0
@@ -201,12 +206,12 @@ margin_bottom = 195.0
 rect_scale = Vector2( 2, 1 )
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 9 )
-script = ExtResource( 8 )
+script = ExtResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="Bliv indlagt/BuyMedicine"]
+[node name="Label" type="Label" parent="Bliv indlagt/Indlæg"]
 margin_right = 170.0
 margin_bottom = 82.0
 custom_fonts/font = SubResource( 2 )
@@ -227,10 +232,17 @@ custom_fonts/font = ExtResource( 5 )
 text = "Noget er gået
 ruskravene galt"
 
+[node name="cheats" type="Button" parent="."]
+margin_left = 461.0
+margin_top = -315.0
+margin_right = 505.0
+margin_bottom = -286.0
+script = ExtResource( 17 )
+
+[connection signal="pressed" from="Hospital" to="Hospital" method="_on_Hospital_pressed"]
 [connection signal="pressed" from="Hospital2" to="Hospital2" method="_on_Hospital2_pressed"]
 [connection signal="pressed" from="Deposit Cash/BackButton" to="Deposit Cash/BackButton" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Deposit Cash/BuyMedicine" to="Deposit Cash/BuyMedicine" method="_on_BuyMedicine_pressed"]
-[connection signal="pressed" from="Deposit Cash/BuyMedicine" to="Deposit Cash/BuyMedicine" method="_on_DepositAll_pressed"]
 [connection signal="pressed" from="Bliv indlagt/BackButton" to="Bliv indlagt/BackButton" method="_on_BackButton_pressed"]
-[connection signal="pressed" from="Bliv indlagt/BuyMedicine" to="Bliv indlagt/BuyMedicine" method="_on_BuyMedicine_pressed"]
-[connection signal="pressed" from="Bliv indlagt/BuyMedicine" to="Bliv indlagt/BuyMedicine" method="_on_DepositAll_pressed"]
+[connection signal="pressed" from="Bliv indlagt/Indlæg" to="Bliv indlagt/Indlæg" method="_on_Indlg_pressed"]
+[connection signal="pressed" from="cheats" to="cheats" method="_on_cheats_pressed"]

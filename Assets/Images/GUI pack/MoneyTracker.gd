@@ -10,3 +10,4 @@ func updateMoney():
 
 func displayDays():
 	$Label.text = "Money: " + str(Gs.moneyPerson) + "$"
+	print(Gs.moneyPerson)
