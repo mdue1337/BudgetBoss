@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Panel" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1235.0
+margin_bottom = -675.0
+
+[node name="Sprite" type="Sprite" parent="."]
