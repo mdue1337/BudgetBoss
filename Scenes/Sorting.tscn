@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Sorting.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Bolt.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Images/box.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Nut.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Other/DefaultCartoonFont.tres" type="Theme" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 88.7544, 90.4823 )
+extents = Vector2( 83.4292, 86.9702 )
 
 [node name="Sorting" type="Node2D"]
 position = Vector2( 801, 488 )
@@ -23,21 +24,28 @@ texture = ExtResource( 2 )
 
 [node name="NutBox" type="Area2D" parent="."]
 position = Vector2( 225, -288 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="NutBox"]
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NutBox"]
-position = Vector2( -19.7517, -16.7333 )
+position = Vector2( -11.5, -18 )
 rotation = -0.78958
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
+[node name="Label" type="Label" parent="NutBox"]
+margin_left = -112.0
+margin_top = 31.0
+margin_right = -41.0
+margin_bottom = 63.0
+rect_rotation = 27.7185
+theme = ExtResource( 6 )
+text = "Nuts"
+
 [node name="BoltBox" type="Area2D" parent="."]
-position = Vector2( -505, -269 )
+position = Vector2( -494, -275 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -51,11 +59,59 @@ position = Vector2( -19.7517, -16.7333 )
 rotation = -0.78958
 shape = SubResource( 1 )
 
+[node name="Label" type="Label" parent="BoltBox"]
+margin_left = -83.9999
+margin_top = 29.0
+margin_right = -12.9999
+margin_bottom = 61.0
+rect_rotation = 27.7185
+theme = ExtResource( 6 )
+text = "Bolts"
+
 [node name="Bolt" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7, 93 )
+position = Vector2( 9, 98 )
 
 [node name="Nut" parent="." instance=ExtResource( 5 )]
-position = Vector2( -355, 83 )
+light_mask = 0
+position = Vector2( -304, 60 )
 
-[connection signal="body_entered" from="NutBox" to="." method="_on_NutBox_body_entered"]
-[connection signal="body_entered" from="BoltBox" to="." method="_on_BoltBox_body_entered"]
+[node name="Nut2" parent="." instance=ExtResource( 5 )]
+light_mask = 0
+position = Vector2( -93, 41 )
+
+[node name="Nut3" parent="." instance=ExtResource( 5 )]
+light_mask = 0
+position = Vector2( -82, 172 )
+
+[node name="Nut4" parent="." instance=ExtResource( 5 )]
+light_mask = 0
+position = Vector2( 36, -29 )
+
+[node name="Nut5" parent="." instance=ExtResource( 5 )]
+light_mask = 0
+position = Vector2( -486, 13 )
+
+[node name="Bolt2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -148, 140 )
+
+[node name="Bolt3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -321, 155 )
+
+[node name="Bolt4" parent="." instance=ExtResource( 3 )]
+position = Vector2( -205, 8 )
+
+[node name="Bolt5" parent="." instance=ExtResource( 3 )]
+position = Vector2( -411, 37 )
+
+[node name="GameWin" type="AcceptDialog" parent="."]
+margin_right = 83.0
+margin_bottom = 58.0
+theme = ExtResource( 6 )
+window_title = "PayDay!"
+dialog_text = "
+      Work completed, well done:)
+Payment will be sent immediately"
+
+[connection signal="area_entered" from="NutBox" to="." method="_on_NutBox_area_entered"]
+[connection signal="area_entered" from="BoltBox" to="." method="_on_BoltBox_area_entered"]
+[connection signal="confirmed" from="GameWin" to="." method="_on_GameWin_confirmed"]
