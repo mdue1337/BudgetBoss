@@ -11,7 +11,7 @@ func _ready():
 #
 
 func _on_Radio_pressed():
-	if radioParts == 16:
+	if radioParts == 5:
 		get_tree().change_scene("res://Scenes/gameWon.tscn")
 	else:
 		get_node("AcceptDialog").visible = true

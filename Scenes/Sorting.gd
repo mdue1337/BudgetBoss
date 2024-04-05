@@ -1,5 +1,42 @@
 extends Node2D
 
+var selected = false
+
+
+func _ready():
+	pass # Replace with function body.
+
+func _process(delta):
+	if selected:
+		followMouse()
+
+func followMouse():
+	position = get_global_mouse_position()
+
+func _input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		if event.pressed:
+			$Nut.selected = true
+			$Bolt.selected = true
+		else:
+			$Nut.selected = false
+			$Bolt.selected = false
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		if event.pressed:
+			selected = true
+			print("pressed")
+		else:
+			selected = false
+			print("released")
+
+
+
+""""
+extends Node2D
+
 
 const NUM_NUTS = 10
 const NUM_BOLTS = 10
@@ -57,16 +94,7 @@ func spawn_random(type):
 	node.position = position
 	add_child(node)
 
-	# Add til gruppe... virker ikke
-	var group_path
-	if type == "nut":
-		group_path = NutBox.get_path()
-	else:
-		group_path = BoltBox.get_path()
-	node.group = [group_path]
-
-	
-	add_child(node)
-
 func _ready():
 	spawn_nuts_and_bolts()
+"""
+
