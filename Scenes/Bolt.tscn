@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Images/Bolt.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Sorting.gd" type="Script" id=2]
+
+[node name="Bolt" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -7, 38, -9, -21, -15, -21, -17, -24, -16, -32, -9, -40, -4, -41, -3, -32, 1, -30, 5, -33, 4, -42, 9, -40, 15, -35, 18, -30, 19, -25, 16, -22, 12, -22, 14, 37 )
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
