@@ -32,7 +32,6 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NutBox"]
 position = Vector2( -11.5, -18 )
 rotation = -0.78958
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="NutBox"]
