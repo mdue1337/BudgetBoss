@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/bed.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/InfoBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/SleepConfirm.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/AcceptDialog.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Habibi.gd" type="Script" id=12]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -48,6 +49,15 @@ margin_right = 353.0
 margin_bottom = 441.0
 rect_scale = Vector2( 0.6, 0.6 )
 texture_normal = ExtResource( 3 )
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Bonfire"]
+visible = true
+margin_left = 546.667
+margin_top = 315.0
+margin_right = 846.667
+margin_bottom = 385.0
+dialog_text = "Do you want to buy food? Food costs: 50 $"
+script = ExtResource( 12 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
 margin_left = -631.0
@@ -128,6 +138,8 @@ position = Vector2( -688, -475 )
 
 [connection signal="pressed" from="Radio" to="." method="_on_Radio_pressed"]
 [connection signal="pressed" from="Bonfire" to="." method="_on_Bonfire_pressed"]
+[connection signal="confirmed" from="Bonfire/ConfirmationDialog" to="Bonfire/ConfirmationDialog" method="_on_ConfirmationDialog_confirmed"]
+[connection signal="visibility_changed" from="Bonfire/ConfirmationDialog" to="Bonfire/ConfirmationDialog" method="_on_ConfirmationDialog_visibility_changed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_AcceptDialog_confirmed"]
 [connection signal="confirmed" from="SleepConfirm" to="SleepConfirm" method="_on_SleepConfirm_confirmed"]

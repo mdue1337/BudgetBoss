@@ -2,13 +2,8 @@ extends Node2D
 
 var radioParts = Gs.radioParts
 
-
-
 func _ready():
-	pass # Replace with function body.
-
-
-#
+	$Label2.text = str(Gs.radioParts) + " acquired out of 5 parts"
 
 func _on_Radio_pressed():
 	if radioParts == 5:
