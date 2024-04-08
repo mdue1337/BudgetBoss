@@ -4,8 +4,8 @@ func _ready():
 	Gs.connect("moneyCounter", self, "updateMoney")
 	displayDays()
 
-func updateMoney():
-	Gs.moneyPerson += 1
+func updateMoney(amount : int):
+	Gs.moneyPerson += amount
 	displayDays()
 
 func displayDays():

@@ -41,7 +41,6 @@ func _on_BoltBox_area_entered(area):
 func is_game_won():
 	if nuts == 0 and bolts == 0:
 		get_node("GameWin").visible = true
-		get_tree().paused = true
 	else:
 		pass
 
@@ -49,10 +48,3 @@ func is_game_won():
 func _on_GameWin_confirmed():
 	Gs.emit_signal("workpay",1)
 	get_tree().change_scene("res://Scenes/Factory.tscn")
-	
-
-
-
-
-
-
