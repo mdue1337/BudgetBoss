@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/screen.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButton.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButtonHover.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Other/DefaultCartoonFont.tres" type="Theme" id=7]
+[ext_resource path="res://Scenes/workPay.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/InfoBar.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -63,6 +65,7 @@ margin_right = 743.0
 margin_bottom = 213.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
+align = 1
 
 [node name="Expenses" type="Label" parent="."]
 margin_left = 571.0
@@ -71,6 +74,7 @@ margin_right = 745.0
 margin_bottom = 321.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
+align = 1
 
 [node name="ExpensesLabel" type="Label" parent="."]
 margin_left = 490.0
@@ -144,6 +148,11 @@ window_title = "Oh oh..."
 dialog_text = "
            Wrong Calculation :(
               Please Try Again"
+
+[node name="WorkPayControl" parent="." instance=ExtResource( 8 )]
+
+[node name="Node2D" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
 [connection signal="confirmed" from="GameWin" to="." method="_on_GameWin_confirmed"]

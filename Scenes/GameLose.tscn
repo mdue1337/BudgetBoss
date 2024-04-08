@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButton.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/GameLose.gd" type="Script" id=3]
+
+[node name="GameLose" type="Control"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.607843, 0.101961, 0.101961, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 400.0
+margin_top = 250.0
+margin_right = 944.0
+margin_bottom = 282.0
+custom_fonts/font = ExtResource( 1 )
+text = "You died. No more hunger left."
+
+[node name="TextureButton2" type="TextureButton" parent="ColorRect"]
+margin_left = 578.0
+margin_top = 348.0
+margin_right = 1122.0
+margin_bottom = 436.0
+texture_normal = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="ColorRect/TextureButton2"]
+margin_left = 15.0
+margin_top = 26.0
+margin_right = 559.0
+margin_bottom = 58.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 1 )
+text = "Last save"
+
+[node name="TextureButton3" type="TextureButton" parent="ColorRect"]
+margin_left = 576.0
+margin_top = 447.0
+margin_right = 1120.0
+margin_bottom = 535.0
+texture_normal = ExtResource( 2 )
+
+[node name="Label3" type="Label" parent="ColorRect/TextureButton3"]
+margin_left = 42.0
+margin_top = 19.0
+margin_right = 586.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+
+[connection signal="pressed" from="ColorRect/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="ColorRect/TextureButton3" to="." method="_on_TextureButton3_pressed"]
