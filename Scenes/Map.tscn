@@ -60,9 +60,6 @@ margin_bottom = 568.0
 rect_scale = Vector2( 0.4, 0.4 )
 texture_normal = ExtResource( 4 )
 
-[node name="Node2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( -678, -427 )
-
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 visible = true
 margin_left = 32.0
@@ -70,6 +67,9 @@ margin_top = 444.0
 margin_right = 372.0
 margin_bottom = 515.0
 dialog_text = "Du har allerede arbejdet i dag. Gå væk med dig"
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -678, -427 )
 
 [connection signal="pressed" from="Camp" to="." method="_on_Camp_pressed"]
 [connection signal="pressed" from="Factory" to="." method="_on_Factory_pressed"]

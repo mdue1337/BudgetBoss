@@ -29,6 +29,8 @@ func _ready():
 func _on_MedicinButton_pressed():
 	if Gs.moneyBank > medicinePrice:
 		Gs.emit_signal("bankCounter", -medicinePrice);
+		Gs.medicineCount += 1
+		get_tree().change_scene("res://Scenes/Market.tscn")
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true
@@ -38,7 +40,7 @@ func _on_WorkButton_pressed():
 		var price : int = Gs.upgradePricesWork[Gs.work - 1]
 		Gs.emit_signal("bankCounter", -price);
 		Gs.work += 1
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://Scenes/Market.tscn")
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true
@@ -47,7 +49,7 @@ func _on_RadioButton_pressed():
 	if  Gs.moneyBank > Gs.upgradePricesRadio[Gs.radioParts]:
 		Gs.emit_signal("bankCounter", -Gs.upgradePricesRadio[Gs.radioParts]);
 		Gs.radioParts += 1
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://Scenes/Market.tscn")
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true
