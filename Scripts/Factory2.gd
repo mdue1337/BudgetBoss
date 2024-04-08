@@ -1,7 +1,8 @@
 extends Node2D
 
-var Income = randi()
-var Expense = randi()
+var rng = RandomNumberGenerator.new()
+var Income = rng.randi_range(1000,10000)
+var Expense = rng.randi_range(1000,10000)
 var exProfit = Income - Expense
 
 
@@ -21,5 +22,5 @@ func _on_Submit_pressed():
 		print("wrong")
 
 func _on_GameWin_confirmed():
-	Gs.emit_signal("workpay",2)
+	Gs.emit_signal("workpay", 2)
 	get_tree().change_scene("res://Scenes/Factory.tscn")

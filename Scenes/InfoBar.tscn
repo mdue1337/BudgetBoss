@@ -92,6 +92,7 @@ margin_left = 484.0
 margin_top = 282.0
 margin_right = 698.0
 margin_bottom = 377.0
+rect_min_size = Vector2( 400, 140 )
 
 [node name="Inventory" parent="PauseMenu" index="2"]
 margin_left = -196.0
