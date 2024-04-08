@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Images/skibidi Steve(1).jpg" type="Texture" id=1]
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButton.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Factory3.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/InfoBar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/workPay.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -113,6 +115,12 @@ margin_top = 190.0
 margin_right = 1054.0
 margin_bottom = 520.0
 dialog_text = "                                                                        Du har klaret alle sprgsmålene. Tillykke."
+
+[node name="Node2D" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="WorkPayControl" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

@@ -41,12 +41,14 @@ func answer(svar):
 		print("forkert");
 
 func answergen():
-	if(questArr.size() == 0):
+	if(questArr.size() == 0): #case hvis alle er svaret
 		print("Du har simpelthen klaret alle spørgsmålene")
 		get_node("AcceptDialog").visible = true
+		Gs.hasWorkedToday = true;
+		Gs.emit_signal("workpay", 3)
+		
 		yield(get_tree().create_timer(2), "timeout")
 		get_tree().change_scene("res://Scenes/Factory.tscn");
-		Gs.hasWorkedToday = true;
 	else:
 		print("---------------------------")
 		print("Der er " + str(questArr.size()) + " i arrayet. Arrayet har dataen: " + str(questArr))
