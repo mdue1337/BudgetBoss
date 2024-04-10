@@ -4,16 +4,15 @@ extends Node
 var fullName : String = "error"
 var password : String = "test";
 var email : String  = "test@gmail.com";
-var userId : int;
+var userId : int = 5;
 var gameId : int;
 var moneyBank : int;
 var moneyPerson : int;
 var days : int;
-var upgrades : int;
 var bills : int;
 var radioParts : int;
-var work : int;
-var hunger : int;
+var work : int = 3;
+var hunger : int = 10;
 var hasWorkedToday : bool = false;
 var illnessLevel : int;
 var medicineCount : int;

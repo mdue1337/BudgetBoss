@@ -10,8 +10,6 @@ func _on_TextureButton_pressed():
 func _on_Bonfire_pressed():
 	get_node("Bonfire/ConfirmationDialog").visible = true
 	print("hej martin dum")
-
+	
 func wait(milliseconds: float) -> void:
 	OS.delay_msec(milliseconds)
-
-
