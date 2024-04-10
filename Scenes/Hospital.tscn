@@ -239,6 +239,17 @@ margin_right = 505.0
 margin_bottom = -286.0
 script = ExtResource( 17 )
 
+[node name="Accident" type="AcceptDialog" parent="."]
+visible = true
+margin_left = 484.0
+margin_top = 363.0
+margin_right = 678.0
+margin_bottom = 471.0
+window_title = "Øv bøv!"
+dialog_text = "Du har uheldigvis fået en mystisk sygdom fra en månemand.
+Hvis du har medicin kan du bruge det for at kureres med det samme, 
+ellers kan du indlægges i 3 dage"
+
 [connection signal="pressed" from="Hospital" to="Hospital" method="_on_Hospital_pressed"]
 [connection signal="pressed" from="Hospital2" to="Hospital2" method="_on_Hospital2_pressed"]
 [connection signal="pressed" from="Deposit Cash/BackButton" to="Deposit Cash/BackButton" method="_on_BackButton_pressed"]
@@ -246,3 +257,5 @@ script = ExtResource( 17 )
 [connection signal="pressed" from="Bliv indlagt/BackButton" to="Bliv indlagt/BackButton" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Bliv indlagt/Indlæg" to="Bliv indlagt/Indlæg" method="_on_Indlg_pressed"]
 [connection signal="pressed" from="cheats" to="cheats" method="_on_cheats_pressed"]
+[connection signal="confirmed" from="Accident" to="Hospital" method="_on_Accident_confirmed"]
+[connection signal="visibility_changed" from="Accident" to="Hospital" method="_on_Accident_visibility_changed"]

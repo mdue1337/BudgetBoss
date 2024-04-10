@@ -16,6 +16,7 @@ var hunger : int = 10;
 var hasWorkedToday : bool = false;
 var illnessLevel : int;
 var medicineCount : int;
+var accident : bool = false;
 
 # shop
 var upgradePricesWork : Array = [500, 1100, 2430];
