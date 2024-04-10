@@ -44,6 +44,7 @@ rect_scale = Vector2( 1.5, 2.5 )
 texture = ExtResource( 2 )
 
 [node name="Hospital" type="TextureButton" parent="."]
+visible = false
 margin_left = 144.0
 margin_top = -128.0
 margin_right = 745.0
@@ -240,15 +241,14 @@ margin_bottom = -286.0
 script = ExtResource( 17 )
 
 [node name="Accident" type="AcceptDialog" parent="."]
-visible = true
-margin_left = 484.0
-margin_top = 363.0
-margin_right = 678.0
-margin_bottom = 471.0
+margin_left = 210.0
+margin_top = 343.0
+margin_right = 854.0
+margin_bottom = 451.0
 window_title = "Øv bøv!"
 dialog_text = "Du har uheldigvis fået en mystisk sygdom fra en månemand.
-Hvis du har medicin kan du bruge det for at kureres med det samme, 
-ellers kan du indlægges i 3 dage"
+Hvis du har medicin kan du bruge det for at kureres med det samme (tryk på ok knappen). 
+Du vil ellers blive indlag i 3 dage, hvis du ikke bruger medicinen. Det er ikke gratis at blive indlagt."
 
 [connection signal="pressed" from="Hospital" to="Hospital" method="_on_Hospital_pressed"]
 [connection signal="pressed" from="Hospital2" to="Hospital2" method="_on_Hospital2_pressed"]
