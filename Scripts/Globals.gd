@@ -4,15 +4,15 @@ extends Node
 var fullName : String = "error"
 var password : String = "test";
 var email : String  = "test@gmail.com";
-var userId : int = 5;
+var userId : int;
 var gameId : int;
 var moneyBank : int;
 var moneyPerson : int;
 var days : int;
 var bills : int;
 var radioParts : int;
-var work : int = 3;
-var hunger : int = 10;
+var work : int;
+var hunger : int;
 var hasWorkedToday : bool = false;
 var illnessLevel : int;
 var medicineCount : int;
@@ -26,6 +26,7 @@ signal response()
 signal login()
 signal signup()
 signal get_leaderboard()
+signal save_leaderboard()
 signal create_game()
 signal load_game()
 signal save_game()
