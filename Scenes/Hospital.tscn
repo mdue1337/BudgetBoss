@@ -250,6 +250,40 @@ dialog_text = "Du har uheldigvis fået en mystisk sygdom fra en månemand.
 Hvis du har medicin kan du bruge det for at kureres med det samme (tryk på ok knappen). 
 Du vil ellers blive indlag i 3 dage, hvis du ikke bruger medicinen. Det er ikke gratis at blive indlagt."
 
+[node name="Accidentstuff" type="Node2D" parent="."]
+visible = false
+
+[node name="Button" type="Button" parent="Accidentstuff"]
+margin_left = -549.0
+margin_top = 119.0
+margin_right = -334.0
+margin_bottom = 190.0
+
+[node name="Label" type="Label" parent="Accidentstuff/Button"]
+margin_right = 196.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 5 )
+text = "Brug medicin"
+align = 1
+valign = 1
+
+[node name="Brug 3 dage" type="Button" parent="Accidentstuff"]
+margin_left = -192.0
+margin_top = 120.0
+margin_right = 28.0
+margin_bottom = 197.0
+
+[node name="Label" type="Label" parent="Accidentstuff/Brug 3 dage"]
+margin_right = 196.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 5 )
+text = "Brug 3 dage"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="pressed" from="Hospital" to="Hospital" method="_on_Hospital_pressed"]
 [connection signal="pressed" from="Hospital2" to="Hospital2" method="_on_Hospital2_pressed"]
 [connection signal="pressed" from="Deposit Cash/BackButton" to="Deposit Cash/BackButton" method="_on_BackButton_pressed"]
@@ -259,3 +293,5 @@ Du vil ellers blive indlag i 3 dage, hvis du ikke bruger medicinen. Det er ikke 
 [connection signal="pressed" from="cheats" to="cheats" method="_on_cheats_pressed"]
 [connection signal="confirmed" from="Accident" to="Hospital" method="_on_Accident_confirmed"]
 [connection signal="visibility_changed" from="Accident" to="Hospital" method="_on_Accident_visibility_changed"]
+[connection signal="pressed" from="Accidentstuff/Button" to="Hospital" method="_on_Medicin_pressed"]
+[connection signal="pressed" from="Accidentstuff/Brug 3 dage" to="Hospital" method="_on_Dage_pressed"]
