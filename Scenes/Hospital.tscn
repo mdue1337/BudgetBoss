@@ -234,6 +234,7 @@ text = "Noget er gået
 ruskravene galt"
 
 [node name="cheats" type="Button" parent="."]
+visible = false
 margin_left = 461.0
 margin_top = -315.0
 margin_right = 505.0
@@ -291,7 +292,6 @@ __meta__ = {
 [connection signal="pressed" from="Bliv indlagt/BackButton" to="Bliv indlagt/BackButton" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Bliv indlagt/Indlæg" to="Bliv indlagt/Indlæg" method="_on_Indlg_pressed"]
 [connection signal="pressed" from="cheats" to="cheats" method="_on_cheats_pressed"]
-[connection signal="confirmed" from="Accident" to="Hospital" method="_on_Accident_confirmed"]
 [connection signal="visibility_changed" from="Accident" to="Hospital" method="_on_Accident_visibility_changed"]
 [connection signal="pressed" from="Accidentstuff/Button" to="Hospital" method="_on_Medicin_pressed"]
 [connection signal="pressed" from="Accidentstuff/Brug 3 dage" to="Hospital" method="_on_Dage_pressed"]

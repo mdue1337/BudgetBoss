@@ -30,3 +30,7 @@ func _on_Hospital_pressed():
 	#else:
 		#get_parent().get_node("AcceptDialog").dialog_text = "Du har ingen sygdomme! brug pængene på en god bog eller spar dem op!"
 		#get_parent().get_node("AcceptDialog").visible = true
+
+func _on_Accident_visibility_changed():
+	if (Gs.accident == true):
+		get_parent().get_node("Accident").visible = true
