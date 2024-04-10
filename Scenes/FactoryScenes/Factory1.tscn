@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/InfoBar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 46.1626, 47.8907 )
+extents = Vector2( 102.663, 137.609 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 798, 482 )
@@ -34,7 +34,6 @@ texture = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NutBox"]
 position = Vector2( -11.5, -18.5 )
 rotation = -0.78958
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="NutBox"]
@@ -57,8 +56,9 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoltBox"]
-position = Vector2( -19.7517, -16.7333 )
+position = Vector2( -20, -1.99998 )
 rotation = -0.78958
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Label" type="Label" parent="BoltBox"]

@@ -10,7 +10,6 @@ func handle_response(response):
 		Gs.gameId = response.response["data"][0]["Id"]
 		Gs.moneyBank = response.response["data"][0]["Money"]
 		Gs.days = response.response["data"][0]["Days"]
-		Gs.upgrades = response.response["data"][0]["Upgrades"]
 		Gs.bills = response.response["data"][0]["Bills"]
 		Gs.work = response.response["data"][0]["Work"]
 		Gs.radioParts = response.response["data"][0]["RadioParts"]

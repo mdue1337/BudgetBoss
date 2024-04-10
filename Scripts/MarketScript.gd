@@ -15,15 +15,13 @@ func _ready():
 		$RadioButton/Label.text = "Radiopart " + str(Gs.radioParts + 1) + ": " + str(Gs.upgradePricesRadio[Gs.radioParts])
 		$RadioButton.texture_normal = preload("res://Scenes/Inventory/radiopart.png")
 	
-	if Gs.work > 4:
+	if Gs.work == 3:
 		$WorkButton.visible = false;
 	else:
 		$WorkButton/Label.text = "Upgrade " + str(Gs.work) + ": " + str(Gs.upgradePricesWork[Gs.work - 1])
-		if Gs.work == 1:
-			$WorkButton.texture_normal = preload("res://Scenes/Inventory/worklevel1.png")
-		elif Gs.work == 2:
+		if Gs.work == 2:
 			$WorkButton.texture_normal = preload("res://Scenes/Inventory/worklevel2.png")
-		elif Gs.work == 3:
+		else:
 			$WorkButton.texture_normal = preload("res://Scenes/Inventory/work3level.png")
 
 func _on_MedicinButton_pressed():

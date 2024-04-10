@@ -8,7 +8,6 @@ func handle_response(response):
 	Gs.gameId = response.response["game_id"][0]
 	Gs.moneyBank = 0
 	Gs.days = 0
-	Gs.upgrades = 0
 	Gs.bills = 0
 	Gs.work = 1
 	Gs.radioParts = 0

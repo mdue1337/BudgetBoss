@@ -2,7 +2,6 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
-
 var questionChosen;
 var realsvar = 69;
 var question1 = "Hvad betyder infation?";
@@ -13,8 +12,8 @@ var questArr : Array = [0, 1, 2];
 #var question2 = "Hvad betyder det at inflationen går ned?"; TIL NÆSTE ITERATION ELLER SÅDAN NOGET
 
 #svar til spørgsmål 1 og 2
-var answ1_1 = "mine penge blvier mere værd";
-var answ1_2 = "mine penge blvier mindre værd";
+var answ1_1 = "mine penge bliver mere værd";
+var answ1_2 = "mine penge bliver mindre værd";
 var answ1_3 = "varerne bliver større";
 
 #svar til spørgsmål 3
@@ -44,11 +43,13 @@ func answergen():
 	if(questArr.size() == 0): #case hvis alle er svaret
 		print("Du har simpelthen klaret alle spørgsmålene")
 		get_node("AcceptDialog").visible = true
+		
 		Gs.hasWorkedToday = true;
 		Gs.emit_signal("workpay", 3)
+		Gs.emit_signal("hungerCounter", -2)
+		yield(get_tree().create_timer(1), "timeout")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
 		
-		yield(get_tree().create_timer(2), "timeout")
-		get_tree().change_scene("res://Scenes/Factory.tscn");
 	else:
 		print("---------------------------")
 		print("Der er " + str(questArr.size()) + " i arrayet. Arrayet har dataen: " + str(questArr))

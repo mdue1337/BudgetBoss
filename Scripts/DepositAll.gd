@@ -8,8 +8,8 @@ func _on_DepositAll_pressed():
 	else:
 		print("moneyBank:" + str(Gs.moneyBank))
 		print("moneyPerson:" + str(Gs.moneyPerson))
-		Gs.moneyBank += Gs.moneyBank
-		Gs.moneyPerson = 0
+		Gs.emit_signal("bankCounter", Gs.moneyPerson)
+		Gs.emit_signal("moneyCounter", -Gs.moneyPerson)
 		print("transfered")
 		print("moneyBank:" + str(Gs.moneyBank))
 		print("moneyPerson:" + str(Gs.moneyPerson))
