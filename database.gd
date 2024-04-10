@@ -18,6 +18,7 @@ func _ready():
 	Gs.connect("login", self, "get_user");
 	Gs.connect("signup", self, "create_user")
 	Gs.connect("get_leaderboard", self, "get_leaderboard")
+	Gs.connect("save_leaderboard", self, "add_user_to_leaderboard")
 	Gs.connect("create_game", self, "create_game")
 	Gs.connect("load_game", self, "load_game")
 	Gs.connect("save_game", self, "update_game")

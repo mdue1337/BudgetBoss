@@ -49,5 +49,5 @@ func _on_GameWin_confirmed():
 	Gs.hasWorkedToday = true;
 	Gs.emit_signal("workpay",1)
 	Gs.emit_signal("hungerCounter", -4)
-	# yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(1), "timeout")
 	get_tree().change_scene("res://Scenes/Camp.tscn")

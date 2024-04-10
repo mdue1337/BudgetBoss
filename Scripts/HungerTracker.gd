@@ -12,7 +12,7 @@ func updateHunger(count : int): ## -4
 	print("Gs after " + str(Gs.hunger))
 	if (Gs.hunger > 10):
 		Gs.hunger = 10
-	elif Gs.hunger < -1:
+	if (Gs.hunger < -1):
 		get_tree().change_scene("res://Scenes/GameLose.tscn")
 	displayHunger()
 	
