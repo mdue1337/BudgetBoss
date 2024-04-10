@@ -22,8 +22,11 @@ script = ExtResource( 10 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 757.0
+margin_bottom = 675.0
 rect_scale = Vector2( 1.70102, 1.07565 )
 texture = ExtResource( 1 )
+stretch_mode = 1
 
 [node name="Welcome" type="Label" parent="TextureRect"]
 margin_left = 55.261
@@ -31,6 +34,7 @@ margin_top = 62.2879
 margin_right = 238.261
 margin_bottom = 122.288
 theme = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "New game"
 
@@ -48,19 +52,22 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TextureRect/New game"]
-margin_left = 18.0
-margin_top = 18.0
-margin_right = 168.0
-margin_bottom = 78.0
+margin_left = 10.0
+margin_top = 9.0
+margin_right = 257.0
+margin_bottom = 86.0
+rect_scale = Vector2( 0.6, 0.8 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "New game"
+align = 1
+valign = 1
 
 [node name="Load game" type="TextureButton" parent="TextureRect"]
-margin_left = 37.0366
-margin_top = 271.464
-margin_right = 205.037
-margin_bottom = 359.464
+margin_left = 37.6245
+margin_top = 274.253
+margin_right = 205.625
+margin_bottom = 362.253
 rect_pivot_offset = Vector2( -1464, -400 )
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
@@ -70,20 +77,23 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="TextureRect/Load game"]
-margin_left = 18.0
-margin_top = 18.0
-margin_right = 168.0
-margin_bottom = 78.0
+margin_left = 10.0
+margin_top = 7.0
+margin_right = 256.0
+margin_bottom = 109.0
+rect_scale = Vector2( 0.6, 0.8 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "Load game
 "
+align = 1
+valign = 2
 
 [node name="Leaderboard" type="TextureButton" parent="TextureRect"]
 margin_left = 38.8003
-margin_top = 358.853
+margin_top = 370.009
 margin_right = 206.8
-margin_bottom = 446.853
+margin_bottom = 458.009
 rect_pivot_offset = Vector2( -1464, -400 )
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
@@ -93,19 +103,22 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="TextureRect/Leaderboard"]
-margin_left = 18.0
-margin_top = 18.0
-margin_right = 168.0
-margin_bottom = 78.0
+margin_left = 9.0
+margin_top = 7.0
+margin_right = 259.0
+margin_bottom = 90.0
+rect_scale = Vector2( 0.6, 0.8 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "Leaderboard"
+align = 1
+valign = 1
 
 [node name="Settings" type="TextureButton" parent="TextureRect"]
 margin_left = 38.2124
-margin_top = 446.242
+margin_top = 468.554
 margin_right = 206.212
-margin_bottom = 534.242
+margin_bottom = 556.554
 rect_pivot_offset = Vector2( -1464, -400 )
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
@@ -115,13 +128,16 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="TextureRect/Settings"]
-margin_left = 18.0
-margin_top = 18.0
-margin_right = 168.0
-margin_bottom = 78.0
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 259.0
+margin_bottom = 91.0
+rect_scale = Vector2( 0.6, 0.8 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "Settings"
+align = 1
+valign = 1
 
 [node name="Win" type="AcceptDialog" parent="TextureRect"]
 anchor_left = 0.5

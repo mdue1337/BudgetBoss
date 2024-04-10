@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButton.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/LeaderboardButton.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/MainMenuButton.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.164706, 0.937255, 0.0784314, 1 )
+
+[node name="Leaderboard" type="TextureButton" parent="ColorRect"]
+margin_left = 476.0
+margin_top = 496.0
+margin_right = 644.0
+margin_bottom = 584.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="ColorRect/Leaderboard"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 225.0
+margin_bottom = 105.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 1 )
+text = "Leaderboard"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Main Menu" type="TextureButton" parent="ColorRect"]
+margin_left = 478.0
+margin_top = 302.0
+margin_right = 646.0
+margin_bottom = 390.0
+rect_scale = Vector2( 2, 2 )
+texture_normal = ExtResource( 2 )
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="ColorRect/Main Menu"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 225.0
+margin_bottom = 105.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = ExtResource( 1 )
+text = "Main Menu"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 320.0
+margin_top = 93.0
+margin_right = 484.0
+margin_bottom = 125.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color_shadow = Color( 0.164706, 0.494118, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Du vandt!"
+
+[connection signal="pressed" from="ColorRect/Leaderboard" to="ColorRect/Leaderboard" method="_on_Leaderboard_pressed"]
+[connection signal="pressed" from="ColorRect/Main Menu" to="ColorRect/Main Menu" method="_on_Main_Menu_pressed"]
