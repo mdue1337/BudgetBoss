@@ -12,7 +12,7 @@ func _on_Radio_pressed():
 			get_node("AcceptDialog").dialog_text = "Man løber altså ikke fra sine regninger. Betal dine regninger før du kan slutte spillet"
 			get_node("AcceptDialog").visible = true
 	else:
-		print(3)
+		get_node("AcceptDialog").dialog_text = "Hmmm... Still doesn't work. We need to find or buy more parts for the radio"
 		get_node("AcceptDialog").visible = true
 	
 	
