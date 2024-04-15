@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Images/MoonSurface.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Camp.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Videos/StartMovie.ogv" type="VideoStream" id=9]
 [ext_resource path="res://Scripts/VideoPlayer.gd" type="Script" id=10]
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Scripts/Tutorial.gd" type="Script" id=12]
 
 [node name="Map" type="Node2D"]
 position = Vector2( 676, 428 )
@@ -73,6 +74,74 @@ dialog_text = "Du har allerede arbejdet i dag. Gå væk med dig"
 
 [node name="Node2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( -678, -427 )
+
+[node name="TutorialText" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="BankLabel" type="Label" parent="TutorialText"]
+margin_left = -590.0
+margin_top = -125.0
+margin_right = -144.0
+margin_bottom = -23.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Tag i banken for at betale regninger og lægge pænge i banken"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="TutorialText"]
+margin_left = 133.0
+margin_top = -117.0
+margin_right = 579.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Gå på hospitalet hvis du har været i et uheld"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="TutorialText"]
+margin_left = -486.0
+margin_top = 181.0
+margin_right = -39.9999
+margin_bottom = 318.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Tag et arbejde i fabrikken for at tjene nogle penge"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label4" type="Label" parent="TutorialText"]
+margin_left = -251.0
+margin_top = 49.0
+margin_right = 195.0
+margin_bottom = 186.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Gå i din camp for at spise, sove og reapererere din radio"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="TutorialText"]
+margin_left = 69.0
+margin_top = 194.0
+margin_right = 446.0
+margin_bottom = 327.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Gå på markedet for at købe viden, mecicin og radio-dele"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_left = -674.0

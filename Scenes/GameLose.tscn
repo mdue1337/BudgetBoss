@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButton.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/GameLose.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/EndMoviePlayer.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Videos/LoseMovie.ogv" type="VideoStream" id=5]
 
 [node name="GameLose" type="Control"]
 script = ExtResource( 3 )
@@ -53,5 +55,13 @@ margin_bottom = 51.0
 custom_fonts/font = ExtResource( 1 )
 text = "Menu"
 
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1278.0
+margin_bottom = 716.0
+stream = ExtResource( 5 )
+autoplay = true
+script = ExtResource( 4 )
+
 [connection signal="pressed" from="ColorRect/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="ColorRect/TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]

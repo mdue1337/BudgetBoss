@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButton.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LeaderboardButton.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/MainMenuButton.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/EndMoviePlayer.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Videos/WinMovie.ogv" type="VideoStream" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -68,5 +70,13 @@ custom_colors/font_color_shadow = Color( 0.164706, 0.494118, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Du vandt!"
 
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1283.0
+margin_bottom = 720.0
+stream = ExtResource( 6 )
+autoplay = true
+script = ExtResource( 5 )
+
 [connection signal="pressed" from="ColorRect/Leaderboard" to="ColorRect/Leaderboard" method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="ColorRect/Main Menu" to="ColorRect/Main Menu" method="_on_Main_Menu_pressed"]
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
