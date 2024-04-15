@@ -17,6 +17,7 @@ var hasWorkedToday : bool = false;
 var illnessLevel : int;
 var medicineCount : int;
 var accident : bool = false;
+var newPLayer: bool = true;
 
 # shop
 var upgradePricesWork : Array = [700, 900, 1300];
