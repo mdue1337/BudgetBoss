@@ -1,12 +1,18 @@
 extends Node2D
 
-var rng = RandomNumberGenerator.new()
-var Income = rng.randi_range(1000,10000)
-var Expense = rng.randi_range(1000,10000)
-var exProfit = Income - Expense
+var rng = RandomNumberGenerator.new();
+var Income : int;
+var Expense : int;
+var exProfit : int;
 
 
 func _ready():
+	rng.randomize()
+	Income = rng.randi_range(1000,10000)
+	rng.randomize()
+	Expense = rng.randi_range(1000,10000)
+	exProfit = Income - Expense;
+	
 	get_node("Income").text = str(Income)
 	get_node("Expenses").text = str(Expense)
 

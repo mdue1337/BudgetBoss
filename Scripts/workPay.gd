@@ -8,10 +8,10 @@ func getpaid(worklevel : int):
 	
 	var amount : int;
 	if worklevel == 1:
-		amount = 325;
+		amount = 400;
 	elif worklevel == 2:
-		amount = 450;
+		amount = 550;
 	elif worklevel == 3:
-		amount = 600;
+		amount = 725;
 	
 	Gs.emit_signal("moneyCounter", amount)

@@ -19,8 +19,8 @@ var medicineCount : int;
 var accident : bool = false;
 
 # shop
-var upgradePricesWork : Array = [500, 1100, 2430];
-var upgradePricesRadio : Array = [200, 298, 341, 400, 600] ## 2000, 2980, 3410, 4000, 6000
+var upgradePricesWork : Array = [700, 900, 1300];
+var upgradePricesRadio : Array = [1250, 1500, 1750, 2000, 2250];
 
 # signaler db
 signal response()
