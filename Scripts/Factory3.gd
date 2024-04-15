@@ -4,7 +4,7 @@ var rng = RandomNumberGenerator.new()
 
 var questionChosen;
 var realsvar = 69;
-var question1 = "Hvad betyder infation?";
+var question1 = "Hvad betyder inflation?";
 var question2 = "Hvad betyder deflation?";
 var question3 = "Hvad er renter?";
 var questArr : Array = [0, 1, 2];
@@ -12,9 +12,9 @@ var questArr : Array = [0, 1, 2];
 #var question2 = "Hvad betyder det at inflationen går ned?"; TIL NÆSTE ITERATION ELLER SÅDAN NOGET
 
 #svar til spørgsmål 1 og 2
-var answ1_1 = "mine penge bliver mere værd";
-var answ1_2 = "mine penge bliver mindre værd";
-var answ1_3 = "varerne bliver større";
+var answ1_1 = "Mine penge bliver mere værd";
+var answ1_2 = "Mine penge bliver mindre værd";
+var answ1_3 = "Varerne bliver større";
 
 #svar til spørgsmål 3
 var answ3_1 = "De penge du betaler for at tage et lån";

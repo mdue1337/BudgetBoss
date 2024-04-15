@@ -18,6 +18,11 @@ func handle_response(response):
 		Gs.radioParts = response.response["data"][0]["RadioParts"]
 		Gs.hunger = response.response["data"][0]["Hunger"]
 		Gs.medicineCount = response.response["data"][0]["MedicineCount"]
+		
+		Gs.moneyPerson = 0
+		Gs.hasWorkedToday = false;
+		Gs.bills = 0
+		Gs.accident = false;
 		get_tree().change_scene("res://Scenes/Map.tscn")
 	else:
 		pass

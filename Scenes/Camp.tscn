@@ -136,6 +136,13 @@ position = Vector2( -640, -375 )
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( -688, -475 )
 
+[node name="WARNING" type="AcceptDialog" parent="."]
+visible = true
+margin_left = 582.0
+margin_top = 293.0
+margin_right = 665.0
+margin_bottom = 351.0
+
 [connection signal="pressed" from="Radio" to="." method="_on_Radio_pressed"]
 [connection signal="pressed" from="Bonfire" to="." method="_on_Bonfire_pressed"]
 [connection signal="confirmed" from="Bonfire/ConfirmationDialog" to="Bonfire/ConfirmationDialog" method="_on_ConfirmationDialog_confirmed"]

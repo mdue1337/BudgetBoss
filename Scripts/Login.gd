@@ -39,3 +39,5 @@ func handle_response(response):
 		#viser success popup
 		var success = get_parent().get_node("Win")
 		success.visible = true
+		
+		get_tree().change_scene("res://Scenes/Main_Menu.tscn")

@@ -154,5 +154,14 @@ dialog_text = "
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
 visible = false
 
+[node name="Label" type="Label" parent="."]
+margin_left = 294.0
+margin_top = 567.0
+margin_right = 1042.0
+margin_bottom = 634.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "Please use + for profit or use - for loss"
+
 [connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
 [connection signal="confirmed" from="GameWin" to="." method="_on_GameWin_confirmed"]
