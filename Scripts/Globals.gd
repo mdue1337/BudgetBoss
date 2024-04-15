@@ -21,13 +21,14 @@ var newPLayer: bool = true;
 
 # shop
 var upgradePricesWork : Array = [500, 1100, 2430];
-var upgradePricesRadio : Array = [2000, 2980, 3410, 4000, 6000]
+var upgradePricesRadio : Array = [200, 298, 341, 400, 600] ## 2000, 2980, 3410, 4000, 6000
 
 # signaler db
 signal response()
 signal login()
 signal signup()
-signal get_leaderboard()
+signal get_leaderboard_days()
+signal get_leaderboard_money()
 signal save_leaderboard()
 signal create_game()
 signal load_game()

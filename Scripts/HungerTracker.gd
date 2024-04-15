@@ -16,7 +16,10 @@ func updateHunger(count : int): ## -4
 		get_tree().change_scene("res://Scenes/GameLose.tscn")
 	displayHunger()
 	
-	hospitalChance = RandomNumberGenerator.new().randi_range(1,10)
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	hospitalChance = rng.randi_range(1,6)
+	
 	print("her er et tal " + str(hospitalChance));
 	if (hospitalChance == 1):
 		Gs.accident = true;

@@ -17,7 +17,8 @@ func _ready():
 	# methods connect
 	Gs.connect("login", self, "get_user");
 	Gs.connect("signup", self, "create_user")
-	Gs.connect("get_leaderboard", self, "get_leaderboard")
+	Gs.connect("get_leaderboard_money", self, "get_leaderboard_money")
+	Gs.connect("get_leaderboard_days", self, "get_leaderboard_days")
 	Gs.connect("save_leaderboard", self, "add_user_to_leaderboard")
 	Gs.connect("create_game", self, "create_game")
 	Gs.connect("load_game", self, "load_game")
@@ -73,8 +74,13 @@ func get_user():
 	var data = {"email": String(Gs.email), "secret": password}
 	request_queue.push_back({"command" : command, "data" : data})
 
-func get_leaderboard():
-	var command = "get_leaderboard"
+func get_leaderboard_money():
+	var command = "get_leaderboard_money"
+	var data = {}
+	request_queue.push_back({"command" : command, "data" : data})
+
+func get_leaderboard_days():
+	var command = "get_leaderboard_days"
 	var data = {}
 	request_queue.push_back({"command" : command, "data" : data})
 	

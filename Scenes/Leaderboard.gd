@@ -2,37 +2,25 @@ extends Control
 
 var money : Array;
 var days : Array;
+var sorted : Array;
+var daysUpdated : bool = false;
 
 func _ready():
-	Gs.emit_signal("get_leaderboard")
+	Gs.emit_signal("get_leaderboard_days")
 	Gs.connect("response", self, "handle_response")
 
+func secondQuery():
+	Gs.emit_signal("get_leaderboard_money")
+
 func handle_response(response):
-	print(response)
-	if response.error != "database_error":
-		var data = response.response["data"]
-		print(data[0].Money)
-		money = bubblesort(data, "Money")
-		days = bubblesort(data, "Days")
-		print(money)
-		print(days)
-		updateMoney(money)
-		updateDays(days)
-	else:
-		print("nothing returned from database")
-
-func bubblesort(data, param):
-	var n = data.size()
-
-	for i in range(n):
-		for j in range(n - i - 1):
-			if data[j].param > data[j + 1].param:
-				# Swap elements if they are in the wrong order
-				var temp = data[j]
-				data[j] = data[j + 1]
-				data[j + 1] = temp
+	var data = response.response["data"]
 	
-	return data
+	if daysUpdated == true:
+		updateMoney(data)
+	else:
+		updateDays(data)
+	
+	print(response)
 
 func updateMoney(data):
 	var count = data.size()
@@ -64,3 +52,6 @@ func updateDays(data):
 			var label = Label.new()
 			label.text = label_text
 			$VBoxContainer3.add_child(label)
+	
+	daysUpdated = true
+	secondQuery()
