@@ -23,6 +23,8 @@ func _ready():
 	Gs.connect("create_game", self, "create_game")
 	Gs.connect("load_game", self, "load_game")
 	Gs.connect("save_game", self, "update_game")
+	Gs.connect("add_user_achievement", self, "add_user_achievement")
+	Gs.connect("get_user_achievements", self, "get_user_achievements")
 
 func _process(delta):
 	if is_requesting:
@@ -102,4 +104,14 @@ func load_game():
 func update_game():
 	var command = "update_game"
 	var data = {"userId": int(Gs.userId), "gameId": int(Gs.gameId), "money": int(Gs.moneyBank), "days": int(Gs.days), "bills" : int(Gs.bills), "work" : int(Gs.work), "radioparts": int(Gs.radioParts), "hunger" : int(Gs.hunger), "medicineCount" : int(Gs.medicineCount)}
+	request_queue.push_back({"command" : command, "data" : data})
+
+func add_user_achievement():
+	var command = "add_user_achievement"
+	var data = {"userId": int(Gs.userId), "aName": int(Gs.achievementDB)};
+	request_queue.push_back({"command" : command, "data" : data})
+
+func get_user_achievements():
+	var command = "get_user_achievements"
+	var data = {"userId": int(Gs.userId)};
 	request_queue.push_back({"command" : command, "data" : data})

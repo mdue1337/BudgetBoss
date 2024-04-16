@@ -19,6 +19,7 @@ func _on_Dage_pressed():
 	Gs.emit_signal("dayCounter");
 	Gs.emit_signal("dayCounter");
 	Gs.accident = false;
+	Gs.hasWorkedToday = false;
 	Gs.bills += 500;
 	get_tree().change_scene("res://Scenes/Hospital.tscn");
 
