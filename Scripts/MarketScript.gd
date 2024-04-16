@@ -34,10 +34,25 @@ func _on_MedicinButton_pressed():
 		get_node("AcceptDialog").visible = true
 
 func _on_WorkButton_pressed():
-	if  Gs.moneyBank > Gs.upgradePricesWork[Gs.work - 1]:
+	print("Pressed button to buy new work level")
+	if Gs.work>2:
+		print("work level too high to buy more")
+	
+	elif  Gs.moneyBank >= Gs.upgradePricesWork[Gs.work - 1]:
+		print("User has enough money")
 		var price : int = Gs.upgradePricesWork[Gs.work - 1]
 		Gs.emit_signal("bankCounter", -price);
 		Gs.work += 1
+		if Gs.work == 1:
+			print("Budget Knowledge shown")
+			get_node("EconomyKnowledge/Budget").visible = true
+		if Gs.work == 2:
+			print("Inflation and Rent knowledge shown")
+			print(get_node("EconomyKnowledge/Inflation"))
+			get_node("EconomyKnowledge/Inflation").visible = true
+			get_node("EconomyKnowledge/Renter").visible = true
+			
+			
 		
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
