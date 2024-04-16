@@ -46,13 +46,16 @@ func _on_WorkButton_pressed():
 		if Gs.work == 1:
 			print("Budget Knowledge shown")
 			get_node("EconomyKnowledge/Budget").visible = true
+			$WorkButton.texture_normal = preload("res://Scenes/Inventory/worklevel2.png")
+			$WorkButton/Label.text = "Upgrade " + str(Gs.work) + ": " + str(Gs.upgradePricesWork[Gs.work - 1])
 		if Gs.work == 2:
 			print("Inflation and Rent knowledge shown")
-			print(get_node("EconomyKnowledge/Inflation"))
 			get_node("EconomyKnowledge/Inflation").visible = true
 			get_node("EconomyKnowledge/Renter").visible = true
-			
-			
+			$WorkButton.texture_normal = preload("res://Scenes/Inventory/work3level.png")
+			$WorkButton/Label.text = "Upgrade " + str(Gs.work) + ": " + str(Gs.upgradePricesWork[Gs.work - 1])
+		if Gs.work ==3:
+			$WorkButton.visible = false;
 		
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
