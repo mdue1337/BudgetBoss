@@ -25,6 +25,8 @@ func _ready():
 	Gs.connect("save_game", self, "update_game")
 	Gs.connect("add_user_achievement", self, "add_user_achievement")
 	Gs.connect("get_user_achievements", self, "get_user_achievements")
+	
+	request_nonce()
 
 func _process(delta):
 	if is_requesting:
@@ -42,6 +44,10 @@ func _send_request(request: Dictionary):
 	var body = "command=" + request['command'] + "&" + data
 	
 	var headers = SERVER_HEADERS.duplicate()
+	
+	if nonce != null:
+		headers.push_back("CNONCE: " + nonce)
+		nonce = null
 	
 	var err = http_request.request(SERVER_URL, headers, true, HTTPClient.METHOD_POST, body)
 		
@@ -62,7 +68,25 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	var response_body = _body.get_string_from_utf8()
 	var response = parse_json(response_body)
 	
+	if response['command'] == "get_nonce":
+		nonce = response['response']['nonce']
+		print("Get nonce: " + response['response']['nonce'])
+		return	
+	
 	Gs.emit_signal("response", response);
+
+func request_nonce():
+	var client = HTTPClient.new()
+	var data = client.query_string_from_dict({"data" : JSON.print({})})
+	var body = "command=get_nonce&" + data
+	
+	var err = http_request.request(SERVER_URL, SERVER_HEADERS, false, HTTPClient.METHOD_POST, body)
+	
+	if err != OK:
+		printerr("HTTPRequest error: " + String(err))
+		return
+	
+	print("Requeste nonce")
 
 func create_user():
 	var command = "add_user_login";
