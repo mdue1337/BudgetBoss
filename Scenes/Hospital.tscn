@@ -234,10 +234,10 @@ text = "Noget er gået
 ruskravene galt"
 
 [node name="cheats" type="Button" parent="."]
-margin_left = 550.0
-margin_top = -440.0
-margin_right = 594.0
-margin_bottom = -411.0
+margin_left = 765.0
+margin_top = -465.0
+margin_right = 809.0
+margin_bottom = -436.0
 script = ExtResource( 17 )
 
 [node name="Accident" type="AcceptDialog" parent="."]
