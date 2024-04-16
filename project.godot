@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 Gs="*res://Scripts/Globals.gd"
 Globals="*res://globals.gd"
 DB="*res://database.gd"
+BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
 
 [display]
 
