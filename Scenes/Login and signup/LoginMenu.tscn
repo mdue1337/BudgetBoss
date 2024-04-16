@@ -41,10 +41,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 5760.0
+margin_bottom = 3240.0
 texture = ExtResource( 1 )
-stretch_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
 margin_left = 200.0
