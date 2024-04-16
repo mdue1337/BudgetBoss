@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Stardust Homeward.mp3-b005e9ecbaeaa382f21c9979a9f069c9.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Stardust Homeward.mp3"
+dest_files=[ "res://.import/Stardust Homeward.mp3-b005e9ecbaeaa382f21c9979a9f069c9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
