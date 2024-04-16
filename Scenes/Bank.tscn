@@ -68,14 +68,14 @@ texture_normal = ExtResource( 9 )
 script = ExtResource( 12 )
 
 [node name="Label3" type="Label" parent="Deposit"]
-margin_left = 123.454
-margin_top = 388.541
-margin_right = 382.454
-margin_bottom = 430.541
+margin_left = 107.45
+margin_top = 387.601
+margin_right = 417.45
+margin_bottom = 429.601
 rect_pivot_offset = Vector2( 63, 5 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
-text = "Deposit Cash"
+text = "Indbetal penge"
 
 [node name="Bills" type="TextureButton" parent="."]
 margin_left = 203.0
@@ -87,14 +87,14 @@ texture_normal = ExtResource( 8 )
 script = ExtResource( 15 )
 
 [node name="Label4" type="Label" parent="Bills"]
-margin_left = 53.75
-margin_top = 253.75
-margin_right = 221.75
-margin_bottom = 295.75
+margin_left = -27.5
+margin_top = 241.25
+margin_right = 293.5
+margin_bottom = 283.25
 rect_pivot_offset = Vector2( 63, 5 )
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
-text = "Pay Bills"
+text = "Betal regninger"
 
 [node name="Label" type="Label" parent="."]
 margin_left = -111.0
@@ -136,7 +136,7 @@ margin_right = 303.0
 margin_bottom = 86.0
 rect_scale = Vector2( 2, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Deposit Cash"
+text = "Indbetal"
 align = 1
 valign = 1
 __meta__ = {
@@ -160,7 +160,7 @@ __meta__ = {
 margin_right = 170.0
 margin_bottom = 82.0
 custom_fonts/font = SubResource( 4 )
-text = "Deposit All"
+text = "Indbetal alt"
 align = 1
 valign = 1
 __meta__ = {
@@ -195,7 +195,7 @@ margin_right = 303.0
 margin_bottom = 86.0
 rect_scale = Vector2( 2, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Pay Bills"
+text = "Betal regning"
 align = 1
 valign = 1
 __meta__ = {
@@ -219,7 +219,7 @@ __meta__ = {
 margin_right = 170.0
 margin_bottom = 82.0
 custom_fonts/font = SubResource( 4 )
-text = "Pay all"
+text = "Betal alle"
 align = 1
 valign = 1
 __meta__ = {
@@ -227,13 +227,14 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="Pay Bills/PayAll"]
-margin_left = 20.0
-margin_top = 100.0
-margin_right = 148.0
+margin_left = -28.0
+margin_top = 92.0
+margin_right = 210.0
 margin_bottom = 200.0
 custom_fonts/font = SubResource( 5 )
 text = "HEJ MARTIN DUE 
 DU ER GRIM"
+align = 1
 
 [node name="Win" type="AcceptDialog" parent="."]
 anchor_left = 0.5

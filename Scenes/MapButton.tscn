@@ -26,6 +26,6 @@ margin_top = 145.0
 margin_right = 474.5
 margin_bottom = 355.0
 custom_fonts/font = SubResource( 1 )
-text = "map"
+text = "Kort"
 
 [connection signal="pressed" from="Map" to="Map" method="_on_Map_pressed"]

@@ -38,7 +38,7 @@ func _on_WorkButton_pressed():
 		var price : int = Gs.upgradePricesWork[Gs.work - 1]
 		Gs.emit_signal("bankCounter", -price);
 		Gs.work += 1
-		get_tree().change_scene("res://Scenes/Market.tscn")
+		
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true

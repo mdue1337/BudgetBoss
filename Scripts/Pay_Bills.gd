@@ -4,6 +4,6 @@ func _on_PayAll_pressed():
 	if(Gs.moneyBank > Gs.bills):
 		Gs.emit_signal("bankCounter", -Gs.bills)
 		Gs.bills = 0
-		$Label2.text = "You paid your bills. \nYou currently have: " + str(Gs.bills) + "$ in bills"
+		$Label2.text = "Du har betalt dine regninger!"
 	else:
-		$Label2.text = "You don't have sufficient funds. \nHowever, you still have " + str(Gs.bills) + "$ in bills"
+		$Label2.text = "Det har du ikke råd til \nDu har stadigt " + str(Gs.bills) + "$ i regninger"

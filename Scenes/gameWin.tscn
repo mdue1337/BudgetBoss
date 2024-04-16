@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Images/GUI pack/Prinbles_GUI_Asset_Silent (1.0.0)/asset/BlankButton.png" type="Texture" id=2]
@@ -6,19 +6,30 @@
 [ext_resource path="res://Scripts/MainMenuButton.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/EndMoviePlayer.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Videos/WinMovie.ogv" type="VideoStream" id=6]
+[ext_resource path="res://Assets/Audio/Stardust Homeward.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Images/WinBackground.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1280.0
+[node name="ColorRect" type="TextureRect" parent="."]
+margin_right = 1281.0
 margin_bottom = 720.0
-color = Color( 0.164706, 0.937255, 0.0784314, 1 )
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 1
 
 [node name="Leaderboard" type="TextureButton" parent="ColorRect"]
-margin_left = 476.0
-margin_top = 496.0
-margin_right = 644.0
-margin_bottom = 584.0
+margin_left = 921.0
+margin_top = 544.0
+margin_right = 1089.0
+margin_bottom = 632.0
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 2 )
 script = ExtResource( 3 )
@@ -38,10 +49,10 @@ __meta__ = {
 }
 
 [node name="Main Menu" type="TextureButton" parent="ColorRect"]
-margin_left = 478.0
-margin_top = 302.0
-margin_right = 646.0
-margin_bottom = 390.0
+margin_left = 917.0
+margin_top = 360.0
+margin_right = 1085.0
+margin_bottom = 448.0
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 2 )
 script = ExtResource( 4 )
@@ -66,9 +77,25 @@ margin_top = 93.0
 margin_right = 484.0
 margin_bottom = 125.0
 rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0.415686, 0.964706, 0.0431373, 1 )
 custom_colors/font_color_shadow = Color( 0.164706, 0.494118, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Du vandt!"
+
+[node name="Credits" type="Label" parent="ColorRect"]
+margin_left = 31.0
+margin_top = 284.0
+margin_right = 455.0
+margin_bottom = 688.0
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = SubResource( 1 )
+text = "BudgetBoss skabt af:
+Martin Due
+Aayan Mohammad Minhas
+Benjamin Bjørn Ewe"
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_right = 1283.0
@@ -77,6 +104,11 @@ stream = ExtResource( 6 )
 autoplay = true
 script = ExtResource( 5 )
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = 2.0
+
 [connection signal="pressed" from="ColorRect/Leaderboard" to="ColorRect/Leaderboard" method="_on_Leaderboard_pressed"]
 [connection signal="pressed" from="ColorRect/Main Menu" to="ColorRect/Main Menu" method="_on_Main_Menu_pressed"]
 [connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="VideoPlayer" method="_on_AudioStreamPlayer2D_finished"]
