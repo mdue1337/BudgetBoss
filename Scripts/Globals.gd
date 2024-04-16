@@ -46,3 +46,5 @@ signal moneyCounter()
 signal hungerCounter()
 signal bankCounter()
 signal workpay()
+
+#background music
