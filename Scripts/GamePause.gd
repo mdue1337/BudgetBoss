@@ -8,7 +8,11 @@ func _on_ExitBtn_pressed():
 
 func _on_SaveGame_pressed():
 	Gs.emit_signal("save_game")
+	Gs.connect("response", self, "temp")
 	$CenterContainer/VBoxContainer/SaveGame/popupSave.visible = true
 
 func _on_Continue_pressed():
 	visible = false
+
+func temp(response):
+	print(response)

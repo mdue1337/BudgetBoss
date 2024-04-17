@@ -7,7 +7,7 @@ var music = AudioServer.get_bus_index("Music")
 func _on_Volume_value_changed(value):
 	AudioServer.set_bus_volume_db(master_bus, value)
 	
-	if value == 0:
+	if value == -10:
 		AudioServer.set_bus_mute(master_bus, true)
 	else:
 		AudioServer.set_bus_mute(master_bus, false)
@@ -16,7 +16,7 @@ func _on_Volume_value_changed(value):
 
 func _on_Music_value_changed(value):
 	AudioServer.set_bus_volume_db(music, value)
-	if value == 0:
+	if value == -10:
 		AudioServer.set_bus_mute(music, true)
 	else:
 		AudioServer.set_bus_mute(music, false)
