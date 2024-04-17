@@ -8,6 +8,7 @@ func _ready():
 func updateBank(count : int):
 	Gs.moneyBank = Gs.moneyBank + count
 	displayBank()
+	BackgroundMusic.get_node("coin_sound").play()
 
 func displayBank():
 	$Label.text = "Bank: " + str(Gs.moneyBank) + "$"
