@@ -179,4 +179,5 @@ dialog_text = "No game found"
 [connection signal="pressed" from="TextureRect/New game" to="TextureRect/New game" method="_on_New_game_pressed"]
 [connection signal="pressed" from="TextureRect/Load game" to="TextureRect/Load game" method="_on_Load_game_pressed"]
 [connection signal="pressed" from="TextureRect/Leaderboard" to="TextureRect/Leaderboard" method="_on_Leaderboard_pressed"]
+[connection signal="pressed" from="TextureRect/Acheivements" to="TextureRect/Acheivements" method="_on_Acheivements_pressed"]
 [connection signal="pressed" from="TextureRect/Settings" to="TextureRect/Settings" method="_on_Settings_pressed"]

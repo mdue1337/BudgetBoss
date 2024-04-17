@@ -25,11 +25,11 @@ func _ready():
 	Gs.connect("save_game", self, "update_game")
 	Gs.connect("add_user_achievement", self, "add_user_achievement")
 	Gs.connect("get_user_achievements", self, "get_user_achievements")
-	
-	#request_nonce()
+	Gs.connect("load_game_five", self, "load_game_five")
+	request_nonce()
 
 func temp(response):
-	print(response)
+	print(response["response"]["data"])
 
 func _process(delta):
 	if is_requesting:
@@ -125,6 +125,11 @@ func create_game():
 
 func load_game():
 	var command = "load_game"
+	var data = {"userId": int(Gs.userId)}
+	request_queue.push_back({"command" : command, "data" : data})
+
+func load_game_five():
+	var command = "load_game_lastfive"
 	var data = {"userId": int(Gs.userId)}
 	request_queue.push_back({"command" : command, "data" : data})
 
