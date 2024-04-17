@@ -25,7 +25,7 @@ func _ready():
 			$WorkButton.texture_normal = preload("res://Scenes/Inventory/work3level.png")
 
 func _on_MedicinButton_pressed():
-	if Gs.moneyBank > medicinePrice:
+	if Gs.moneyBank >= medicinePrice:
 		Gs.emit_signal("bankCounter", -medicinePrice);
 		Gs.medicineCount += 1
 		get_tree().change_scene("res://Scenes/Market.tscn")
@@ -62,7 +62,7 @@ func _on_WorkButton_pressed():
 		get_node("AcceptDialog").visible = true
 
 func _on_RadioButton_pressed():
-	if  Gs.moneyBank > Gs.upgradePricesRadio[Gs.radioParts]:
+	if  Gs.moneyBank >= Gs.upgradePricesRadio[Gs.radioParts]:
 		Gs.emit_signal("bankCounter", -Gs.upgradePricesRadio[Gs.radioParts]);
 		Gs.radioParts += 1
 		get_tree().change_scene("res://Scenes/Market.tscn")
