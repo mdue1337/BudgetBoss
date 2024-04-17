@@ -56,6 +56,7 @@ margin_left = 546.667
 margin_top = 315.0
 margin_right = 846.667
 margin_bottom = 385.0
+rect_min_size = Vector2( 400, 140 )
 dialog_text = "Do you want to buy food? Food costs: 50 $"
 script = ExtResource( 12 )
 

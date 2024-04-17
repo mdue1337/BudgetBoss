@@ -1,6 +1,69 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Images/skibidi Steve(1).jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Other/DefaultCartoonFont.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Images/GUI pack/BackMainMenu.tscn" type="PackedScene" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends ScrollContainer
+
+# Definér en konstant med stien til din skrifttype
+const FONT_PATH = \"res://fonts/poco/Poco.tres\"
+
+var achievement_data_DB = [];
+
+func _ready():
+	Gs.emit_signal(\"get_user_achievements\")
+	Gs.connect(\"response\", self, \"handle_response\")
+
+func handle_response(response):
+	var data_array = response[\"response\"][\"data\"]
+	var n = data_array.size()
+	
+	for i in range(n):
+		achievement_data_DB.append(data_array[i - 1])
+	
+	insert_achievement()
+
+func insert_achievement():
+	var vbox = VBoxContainer.new()
+	add_child(vbox)
+
+	# Indlæs skrifttypen
+	var font = load(\"res://fonts/poco/Poco.tres\")
+
+	for data_point in achievement_data_DB:
+		# Opret Panel for achievement
+		var panel = Panel.new()
+		panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		panel.rect_min_size = Vector2(800, 150)  # Juster højden efter behov
+		vbox.add_child(panel)
+
+		# Label for titel
+		var title_label = Label.new()
+		title_label.text = data_point[\"Name\"]
+		title_label.align = Label.ALIGN_CENTER
+		title_label.valign = Label.VALIGN_CENTER
+		title_label.add_font_override(\"font\", font)  # Tilføj skrifttypen til labelen
+		panel.add_child(title_label)
+
+		# Label for beskrivelse
+		var des_label = Label.new()
+		des_label.text = \"Description: \" + str(data_point[\"Description\"])
+		des_label.align = Label.ALIGN_CENTER
+		des_label.valign = Label.VALIGN_CENTER
+		des_label.rect_position.y = title_label.rect_size.y + 25  # Juster y-koordinaten for at placere den under title_label
+		des_label.add_font_override(\"font\", font)  # Tilføj skrifttypen til labelen
+		panel.add_child(des_label)
+
+	set_custom_minimum_size(Vector2(300, 500))
+"
+
+[sub_resource type="DynamicFont" id=2]
+size = 80
+use_filter = true
+font_data = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,3 +72,26 @@ margin_right = 1286.0
 margin_bottom = 717.0
 texture = ExtResource( 1 )
 stretch_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect"]
+margin_left = 245.0
+margin_top = 132.0
+margin_right = 1061.0
+margin_bottom = 673.0
+script = SubResource( 1 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 14.0
+margin_top = 7.0
+margin_right = 1282.0
+margin_bottom = 91.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+text = "Achievements"
+align = 1
+
+[node name="BackButton" parent="." instance=ExtResource( 4 )]
+margin_left = 59.0
+margin_top = 39.0
+margin_right = 59.0
+margin_bottom = 39.0

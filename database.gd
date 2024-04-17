@@ -26,7 +26,10 @@ func _ready():
 	Gs.connect("add_user_achievement", self, "add_user_achievement")
 	Gs.connect("get_user_achievements", self, "get_user_achievements")
 	
-	request_nonce()
+	#request_nonce()
+
+func temp(response):
+	print(response)
 
 func _process(delta):
 	if is_requesting:
