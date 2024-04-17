@@ -1,17 +1,17 @@
 extends Node
 
 func _ready():
-	# Connect the _on_tree_changed function to the tree_changed signal
+	# gør så den kan se når scenen skifter, så det kan køre igen
 	get_tree().connect("tree_changed", self, "_on_tree_changed")
-	# Perform the initial recursive search
+	# searcher så også den først scene der loades blivver searched
 	perform_recursive_search()
 
-# Function to perform the recursive search
+# definerer listen af knapper, og sender det videre til connect_buttons funktionen
 func perform_recursive_search():
 	var nodes = get_nodes_of_type_recursive(TextureButton, get_tree().get_root())
 	connect_buttons(nodes)
 
-# Recursive function to find nodes of a given type
+# rekursive funktion der finder alle buttons
 func get_nodes_of_type_recursive(type, node):
 	var result = []
 	_get_nodes_of_type_recursive(node, type, result)
@@ -27,20 +27,19 @@ func _get_nodes_of_type_recursive(node, type, result):
 	for child in node.get_children():
 		_get_nodes_of_type_recursive(child, type, result)
 
-# Function to connect button signals
+# connecter alle buttons sendt til den til lyd effekten
 func connect_buttons(buttons):
 	for button in buttons:
-		# Check if the signal is already connected
+		# der var nogle problemer med at nogle noder allerede er connected, der kunne optimalt fixes, men det kan også bare undgås med et simppelt check
 		if not button.is_connected("pressed", self, "play_sound"):
-			# Connect the signal only if it's not already connected
 			button.connect("pressed", self, "play_sound")
 
-# Function to play the sound
+# spil lyden
 func play_sound():
 	get_node("button_sound").play()
 	print("click sfx played and stopped")
 
-# Function called when the scene tree changes
+# så den kører når man går til ny scene
 func _on_tree_changed():
-	# Perform the recursive search whenever the scene tree changes
-	perform_recursive_search()
+	if get_tree() != null:
+		perform_recursive_search()
