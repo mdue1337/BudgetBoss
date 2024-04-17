@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Inventory/InventoryView.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Inventory/medicine.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Inventory/radiopart.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/GUI pack/ArrowLeft/Default.png" type="Texture" id=4]
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=5]
 
 [node name="Inventory" type="Control"]
 script = ExtResource( 1 )
@@ -14,36 +15,54 @@ margin_top = 1.0
 margin_right = 252.0
 margin_bottom = 251.0
 rect_scale = Vector2( 2.5, 2.5 )
-color = Color( 0.309804, 0.25098, 0.74902, 1 )
+color = Color( 0, 0, 0, 0.588235 )
 
 [node name="Label" type="Label" parent="ColorRect"]
-margin_left = 90.0
-margin_top = 57.0
-margin_right = 151.0
-margin_bottom = 71.0
+margin_left = 46.8
+margin_top = 31.2
+margin_right = 206.8
+margin_bottom = 63.2
+custom_fonts/font = ExtResource( 5 )
 text = "Inventory"
 
 [node name="WorkLevel" type="Panel" parent="ColorRect"]
 margin_left = 175.0
-margin_top = 100.0
+margin_top = 123.6
 margin_right = 210.0
-margin_bottom = 135.0
+margin_bottom = 158.6
 
 [node name="Sprite" type="Sprite" parent="ColorRect/WorkLevel"]
 position = Vector2( 17, 16 )
 region_rect = Rect2( 0, 0, 200, 200 )
 
 [node name="Label" type="Label" parent="ColorRect/WorkLevel"]
-margin_left = -3.0
-margin_top = -15.0
-margin_right = 37.0
-margin_bottom = -1.0
+margin_left = 7.8
+margin_top = 38.4
+margin_right = 47.8
+margin_bottom = 70.4
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 5 )
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="ColorRect/WorkLevel"]
+margin_left = -17.8
+margin_top = -27.2
+margin_right = 142.2
+margin_bottom = 39.8
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.215686, 0.427451, 0.92549, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Education"
+align = 1
+valign = 1
 
 [node name="Medicine" type="Panel" parent="ColorRect"]
 margin_left = 100.0
-margin_top = 100.0
+margin_top = 123.6
 margin_right = 135.0
-margin_bottom = 135.0
+margin_bottom = 158.6
 
 [node name="Sprite2" type="Sprite" parent="ColorRect/Medicine"]
 position = Vector2( 14, 15 )
@@ -51,16 +70,32 @@ scale = Vector2( 0.0930555, 0.0930555 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="ColorRect/Medicine"]
-margin_left = -1.2
-margin_top = 34.8
-margin_right = 38.8
-margin_bottom = 48.8
+margin_left = 6.8
+margin_top = 36.8
+margin_right = 46.8
+margin_bottom = 68.8
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 5 )
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="ColorRect/Medicine"]
+margin_left = -23.6
+margin_top = -27.6
+margin_right = 146.4
+margin_bottom = 39.4
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Medicine"
+align = 1
+valign = 1
 
 [node name="RadioParts" type="Panel" parent="ColorRect"]
 margin_left = 25.0
-margin_top = 100.0
+margin_top = 123.6
 margin_right = 60.0
-margin_bottom = 135.0
+margin_bottom = 158.6
 
 [node name="Sprite3" type="Sprite" parent="ColorRect/RadioParts"]
 position = Vector2( 17, 16 )
@@ -68,10 +103,27 @@ scale = Vector2( 0.059, 0.059 )
 texture = ExtResource( 3 )
 
 [node name="Labe" type="Label" parent="ColorRect/RadioParts"]
-margin_left = -2.0
-margin_top = -15.0
-margin_right = 38.0
-margin_bottom = -1.0
+margin_left = 6.2
+margin_top = 37.2
+margin_right = 46.2
+margin_bottom = 69.2
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 5 )
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="ColorRect/RadioParts"]
+margin_left = -9.4
+margin_top = -36.0
+margin_right = 111.6
+margin_bottom = 31.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_colors/font_color = Color( 0.745098, 0.745098, 0.745098, 1 )
+custom_fonts/font = ExtResource( 5 )
+text = "Radio
+Parts"
+align = 1
+valign = 1
 
 [node name="TextureButton" type="TextureButton" parent="ColorRect"]
 margin_left = 11.6

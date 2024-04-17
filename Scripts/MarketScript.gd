@@ -56,7 +56,6 @@ func _on_WorkButton_pressed():
 			$WorkButton/Label.text = "Upgrade " + str(Gs.work) + ": " + str(Gs.upgradePricesWork[Gs.work - 1])
 		if Gs.work ==3:
 			$WorkButton.visible = false;
-		
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true
