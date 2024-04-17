@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/bed.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/SleepConfirm.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/AcceptDialog.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/Habibi.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/AchievementPopUp.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
@@ -143,6 +144,9 @@ margin_left = 582.0
 margin_top = 293.0
 margin_right = 665.0
 margin_bottom = 351.0
+
+[node name="AchievementPopUp" parent="." instance=ExtResource( 13 )]
+position = Vector2( -195, 507 )
 
 [connection signal="pressed" from="Radio" to="." method="_on_Radio_pressed"]
 [connection signal="pressed" from="Bonfire" to="." method="_on_Bonfire_pressed"]

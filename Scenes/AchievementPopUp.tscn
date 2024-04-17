@@ -20,7 +20,7 @@ margin_bottom = 207.0
 margin_right = 380.0
 margin_bottom = 32.0
 custom_fonts/font = ExtResource( 1 )
-text = "Achievements Unlocked!"
+text = "Achievement Unlocked!"
 align = 1
 
 [node name="Name" type="Label" parent="Panel"]

@@ -8,7 +8,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends ScrollContainer
 
-# Definér en konstant med stien til din skrifttype
+
 const FONT_PATH = \"res://fonts/poco/Poco.tres\"
 
 var achievement_data_DB = [];
@@ -37,10 +37,11 @@ func insert_achievement():
 	var font = load(\"res://fonts/poco/Poco.tres\")
 
 	for data_point in achievement_data_DB:
+		
 		# Opret Panel for achievement
 		var panel = Panel.new()
 		panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
-		panel.rect_min_size = Vector2(800, 150)  # Juster højden efter behov
+		panel.rect_min_size = Vector2(800, 150)  
 		vbox.add_child(panel)
 
 		# Label for titel
@@ -48,7 +49,8 @@ func insert_achievement():
 		title_label.text = data_point[\"Name\"]
 		title_label.align = Label.ALIGN_CENTER
 		title_label.valign = Label.VALIGN_CENTER
-		title_label.add_font_override(\"font\", font)  # Tilføj skrifttypen til labelen
+		title_label.add_font_override(\"font\", font)  
+		title_label.add_color_override(\"font_color\", Color(1, 0.5, 0))
 		panel.add_child(title_label)
 
 		# Label for beskrivelse
@@ -56,8 +58,8 @@ func insert_achievement():
 		des_label.text = \"Description: \" + str(data_point[\"Description\"])
 		des_label.align = Label.ALIGN_CENTER
 		des_label.valign = Label.VALIGN_CENTER
-		des_label.rect_position.y = title_label.rect_size.y + 25  # Juster y-koordinaten for at placere den under title_label
-		des_label.add_font_override(\"font\", font)  # Tilføj skrifttypen til labelen
+		des_label.rect_position.y = title_label.rect_size.y + 25  
+		des_label.add_font_override(\"font\", font)  
 		panel.add_child(des_label)
 
 	set_custom_minimum_size(Vector2(300, 500))
@@ -68,7 +70,7 @@ size = 80
 use_filter = true
 font_data = ExtResource( 2 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1286.0

@@ -43,6 +43,7 @@ signal save_game()
 signal add_user_achievement()
 signal get_user_achievements()
 signal load_game_five()
+signal popup_achievement()
 
 # signaler other
 signal dayCounter()

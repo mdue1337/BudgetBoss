@@ -23,6 +23,8 @@ func followMouse():
 
 func _on_NutBox_area_entered(area):
 	if str(area).begins_with("Nut"):
+		area.get_parent().queue_free()
+
 		nuts -= 1
 		if nuts < 0:
 			nuts = 0
@@ -31,6 +33,7 @@ func _on_NutBox_area_entered(area):
 
 func _on_BoltBox_area_entered(area):
 	if str(area).begins_with("Bolt"):
+		area.get_parent().queue_free()
 		bolts -= 1
 		if bolts < 0:
 			bolts = 0
