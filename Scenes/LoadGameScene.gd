@@ -73,6 +73,16 @@ func loadGame(response):
 		Gs.radioParts = response.response["data"][0]["RadioParts"]
 		Gs.hunger = response.response["data"][0]["Hunger"]
 		Gs.medicineCount = response.response["data"][0]["MedicineCount"]
+		
+		## reset local
+		Gs.hasHadAccident = false;
+		Gs.hasWorkedToday = false;
+		Gs.eatCount = 0;
+		Gs.workCount = 0;
+		Gs.sleepCount = 0;
+		Gs.accident = false;
+		Gs.newPLayer = true;
+		
 		get_tree().change_scene("res://Scenes/Map.tscn")
 	else:
 		get_parent().get_parent().get_node("NoLogin").visible = true
