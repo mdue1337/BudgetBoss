@@ -7,9 +7,9 @@ var loadGameId : int;
 var fullName : String = "error"
 var password : String = "test";
 var email : String  = "test@gmail.com";
-var userId : int = 15;
+var userId : int;
 var gameId : int;
-var moneyBank : int;
+var moneyBank : int = 50000;
 var moneyPerson : int;
 var days : int;
 var bills : int;

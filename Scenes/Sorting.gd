@@ -58,29 +58,25 @@ func _on_GameWin_confirmed():
 	if Gs.workCount == 1:
 		Gs.achievementDB = 1
 		Gs.emit_signal("add_user_achievement")
-		var main_scene = get_parent()
-		var achievement = main_scene.get_node("AchievementPopUp") 
+		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
 	if Gs.workCount == 10:
 		Gs.achievementDB = 4
 		Gs.emit_signal("add_user_achievement")
-		var main_scene = get_parent()
-		var achievement = main_scene.get_node("AchievementPopUp") 
+		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
 	if Gs.workCount == 25:
 		Gs.achievementDB = 5
 		Gs.emit_signal("add_user_achievement")
-		var main_scene = get_parent()
-		var achievement = main_scene.get_node("AchievementPopUp") 
+		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
 	if Gs.workCount == 50:
 		Gs.achievementDB = 6
 		Gs.emit_signal("add_user_achievement")
-		var main_scene = get_parent()
-		var achievement = main_scene.get_node("AchievementPopUp") 
+		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
 	get_tree().change_scene("res://Scenes/Camp.tscn")

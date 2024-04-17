@@ -31,5 +31,24 @@ func _on_GameWin_confirmed():
 	Gs.hasWorkedToday = true;
 	Gs.emit_signal("workpay", 2)
 	Gs.emit_signal("hungerCounter", -3)
+	Gs.workCount += 1
+	if Gs.workCount == 10:
+		Gs.achievementDB = 4
+		Gs.emit_signal("add_user_achievement")
+		var achievement = get_node("AchievementPopUp") 
+		achievement.call("write_label", Gs.achievementDB)
+		achievement.visible = true
+	if Gs.workCount == 25:
+		Gs.achievementDB = 5
+		Gs.emit_signal("add_user_achievement")
+		var achievement = get_node("AchievementPopUp") 
+		achievement.call("write_label", Gs.achievementDB)
+		achievement.visible = true
+	if Gs.workCount == 50:
+		Gs.achievementDB = 6
+		Gs.emit_signal("add_user_achievement")
+		var achievement = get_node("AchievementPopUp") 
+		achievement.call("write_label", Gs.achievementDB)
+		achievement.visible = true
 	yield(get_tree().create_timer(1), "timeout")
 	get_tree().change_scene("res://Scenes/Camp.tscn")

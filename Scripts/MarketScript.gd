@@ -28,7 +28,12 @@ func _on_MedicinButton_pressed():
 	if Gs.moneyBank >= medicinePrice:
 		Gs.emit_signal("bankCounter", -medicinePrice);
 		Gs.medicineCount += 1
-		get_tree().change_scene("res://Scenes/Market.tscn")
+		if Gs.medicineCount == 10:
+			Gs.achievementDB = 10
+			Gs.emit_signal("add_user_achievement")
+			var achievement = get_node("AchievementPopUp") 
+			achievement.call("write_label", Gs.achievementDB)
+			achievement.visible = true
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true
@@ -54,8 +59,16 @@ func _on_WorkButton_pressed():
 			get_node("EconomyKnowledge/Renter").visible = true
 			$WorkButton.texture_normal = preload("res://Scenes/Inventory/work3level.png")
 			$WorkButton/Label.text = "Upgrade " + str(Gs.work) + ": " + str(Gs.upgradePricesWork[Gs.work - 1])
+			
+		
+
 		if Gs.work ==3:
 			$WorkButton.visible = false;
+			Gs.achievementDB = 9
+			Gs.emit_signal("add_user_achievement")
+			var achievement = get_node("AchievementPopUp") 
+			achievement.call("write_label", Gs.achievementDB)
+			achievement.visible = true
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true
@@ -64,7 +77,26 @@ func _on_RadioButton_pressed():
 	if  Gs.moneyBank >= Gs.upgradePricesRadio[Gs.radioParts]:
 		Gs.emit_signal("bankCounter", -Gs.upgradePricesRadio[Gs.radioParts]);
 		Gs.radioParts += 1
-		get_tree().change_scene("res://Scenes/Market.tscn")
+		if Gs.radioParts == 1:
+			#get_tree().change_scene("res://Scenes/Market.tscn")
+			Gs.achievementDB == 7
+			Gs.emit_signal("add_user_achievement")
+			var achievement = get_node("AchievementPopUp") 
+			achievement.call("write_label", Gs.achievementDB)
+			achievement.visible = true
+			yield(get_tree().create_timer(3), "timeout")
+			get_tree().change_scene("res://Scenes/Market.tscn")
+			
+		if Gs.radioParts == 5:
+			Gs.achievementDB == 8
+			Gs.emit_signal("add_user_achievement")
+			var achievement = get_node("AchievementPopUp") 
+			achievement.call("write_label", Gs.achievementDB)
+			achievement.visible = true
+			yield(get_tree().create_timer(3), "timeout")
+			get_tree().change_scene("res://Scenes/Market.tscn")
+		if Gs.radioParts == 2 or Gs.radioParts == 3 or Gs.radioParts == 4:
+			get_tree().change_scene("res://Scenes/Market.tscn")
 	else:
 		get_node("AcceptDialog").dialog_text = "Du har ikke råd"
 		get_node("AcceptDialog").visible = true
