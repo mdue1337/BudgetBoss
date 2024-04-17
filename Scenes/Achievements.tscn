@@ -18,6 +18,9 @@ func _ready():
 	Gs.connect(\"response\", self, \"handle_response\")
 
 func handle_response(response):
+	if response.error == \"no_data\":
+		return
+	
 	var data_array = response[\"response\"][\"data\"]
 	var n = data_array.size()
 	

@@ -1,10 +1,13 @@
 extends Node
 
+# temp
+var loadGameId : int;
+
 # variabler
 var fullName : String = "error"
 var password : String = "test";
 var email : String  = "test@gmail.com";
-var userId : int = 17;
+var userId : int = 1;
 var gameId : int;
 var moneyBank : int;
 var moneyPerson : int;
