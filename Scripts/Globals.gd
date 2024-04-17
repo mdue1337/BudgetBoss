@@ -4,7 +4,7 @@ extends Node
 var fullName : String = "error"
 var password : String = "test";
 var email : String  = "test@gmail.com";
-var userId : int = 5;
+var userId : int = 17;
 var gameId : int;
 var moneyBank : int;
 var moneyPerson : int;
@@ -24,7 +24,7 @@ var upgradePricesWork : Array = [700, 900, 1300];
 var upgradePricesRadio : Array = [1250, 1500, 1750, 2000, 2250];
 
 # achievements
-var Achievements : Array = ["We all start somewhere", "Bulking season", "Sweet Dreams", "Grind never stops (BRONZE)", "Grind never stops (SILVER)", "Grind never stops (GOLD)", "I am a mechanic", "Get me outta here", "Jack of all trades", "Pharmacist", "Shouln't I be dead now?", "Ebola"]
+var AchievementsName : Array = ["We all start somewhere", "Bulking season", "Sweet Dreams", "Grind never stops (BRONZE)", "Grind never stops (SILVER)", "Grind never stops (GOLD)", "I am a mechanic", "Get me outta here", "Jack of all trades", "Pharmacist", "Shouln't I be dead now?", "Ebola"]
 var achievementDB : int = 2;
 
 # signaler db
@@ -39,6 +39,7 @@ signal load_game()
 signal save_game()
 signal add_user_achievement()
 signal get_user_achievements()
+signal load_game_five()
 
 # signaler other
 signal dayCounter()
@@ -47,4 +48,8 @@ signal hungerCounter()
 signal bankCounter()
 signal workpay()
 
-#background music
+#local achievements check var
+var eatCount : int = 0;
+var workCount : int = 0;
+var sleepCount : int = 0;
+var hasHadAccident : bool = false;
