@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Images/skibidi Steve(1).jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/MainMenuLeaderboard.gd" type="Script" id=9]
 [ext_resource path="res://Scripts/Main_Menu.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/AcheivementsButton.gd" type="Script" id=11]
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -23,10 +24,11 @@ script = ExtResource( 10 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 757.0
-margin_bottom = 675.0
+margin_right = 752.0
+margin_bottom = 669.0
 rect_scale = Vector2( 1.70102, 1.07565 )
 texture = ExtResource( 1 )
+expand = true
 stretch_mode = 1
 
 [node name="Welcome" type="Label" parent="TextureRect"]
@@ -63,6 +65,27 @@ custom_fonts/font = SubResource( 1 )
 text = "New game"
 align = 1
 valign = 1
+
+[node name="GameWarning" type="ColorRect" parent="TextureRect"]
+visible = false
+margin_left = 253.0
+margin_top = 225.0
+margin_right = 595.0
+margin_bottom = 387.0
+color = Color( 0, 0, 0, 0.588235 )
+
+[node name="GameWarning" type="Label" parent="TextureRect/GameWarning"]
+margin_left = 2.35152
+margin_top = 15.8044
+margin_right = 683.352
+margin_bottom = 152.804
+rect_scale = Vector2( 0.5, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+text = "Du kan maksimalt have 5 ikke-færdiggjorte spil gemt på samme tid. Hvis du laver flere slettes den ældste. Tryk igen for at confirme."
+align = 1
+valign = 1
+autowrap = true
 
 [node name="Load game" type="TextureButton" parent="TextureRect"]
 margin_left = 37.6245
