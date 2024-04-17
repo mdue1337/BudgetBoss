@@ -19,6 +19,7 @@ margin_bottom = 207.0
 [node name="Title" type="Label" parent="Panel"]
 margin_right = 380.0
 margin_bottom = 32.0
+custom_colors/font_color = Color( 1, 0.584314, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "Achievement Unlocked!"
 align = 1
@@ -28,16 +29,16 @@ margin_left = 3.0
 margin_top = 45.0
 margin_right = 397.0
 margin_bottom = 104.0
+custom_fonts/font = ExtResource( 1 )
 align = 1
 
-[node name="Describtion" type="Label" parent="Panel"]
+[node name="Description" type="Label" parent="Panel"]
 margin_left = 3.0
 margin_top = 112.0
 margin_right = 397.0
 margin_bottom = 197.0
+custom_fonts/font = ExtResource( 1 )
 align = 1
-
-[node name="Tween" type="Tween" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
