@@ -10,6 +10,9 @@ script/source = "extends ScrollContainer
 # Definér en konstant med stien til din skrifttype
 const FONT_PATH = \"res://fonts/poco/Poco.tres\"
 
+var achievement_data_DB = [];
+
+
 var achievement_data = [
 	{ \"title\": \"We all start somewhere\", \"description\": \"Arbejdet for første gang!\" },
 	{ \"title\": \"Bulking season\", \"description\": \"Spist mad for første gang!\" },
@@ -20,7 +23,18 @@ var achievement_data = [
 ]
 
 func _ready():
-	insert_achievement()
+	Gs.emit_signal(\"get_user_achievements\")
+	Gs.connect(\"response\", self, \"handle_response\")
+	# Skal nok ned i handle response? # insert_achievement()
+
+func handle_response(response):
+	var data_array = response[\"response\"][\"data\"]
+	var n = data_array.size()
+	
+	for i in range(n):
+		achievement_data_DB.append(data_array[i - 1])
+	
+	print(achievement_data_DB)
 
 func insert_achievement():
 	var vbox = VBoxContainer.new()
