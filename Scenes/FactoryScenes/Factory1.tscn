@@ -123,6 +123,7 @@ Payment will be sent immediately"
 
 [node name="AchievementPopUp" parent="." instance=ExtResource( 9 )]
 visible = false
+position = Vector2( -360, -376 )
 
 [connection signal="area_entered" from="NutBox" to="." method="_on_NutBox_area_entered"]
 [connection signal="area_entered" from="BoltBox" to="." method="_on_BoltBox_area_entered"]

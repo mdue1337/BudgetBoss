@@ -166,6 +166,7 @@ text = "Please use + for profit or use - for loss"
 
 [node name="AchievementPopUp" parent="." instance=ExtResource( 10 )]
 visible = false
+position = Vector2( 442, 43 )
 
 [connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
 [connection signal="confirmed" from="GameWin" to="." method="_on_GameWin_confirmed"]

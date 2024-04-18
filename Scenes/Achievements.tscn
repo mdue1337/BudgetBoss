@@ -61,10 +61,11 @@ func insert_achievement():
 		des_label.valign = Label.VALIGN_CENTER
 		des_label.rect_position.y = title_label.rect_size.y + 25  
 		des_label.add_font_override(\"font\", font)  
+		des_label.rect_scale = Vector2(0.5, 0.5)
 		panel.add_child(des_label)
 	
 	set_custom_minimum_size(Vector2(300, 500))
-	get_parent().get_parent().get_node(\"count\").text = str(numOfAchievements) + \" out of \" + str(Gs.AchievementsName.size())
+	get_parent().get_parent().get_node(\"count\").text = str(numOfAchievements) + \" out of \" + str(Gs.AchievementsName.size()) + \" (1 unreachable in current version)\"
 "
 
 [sub_resource type="DynamicFont" id=2]

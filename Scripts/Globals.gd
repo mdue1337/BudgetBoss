@@ -19,7 +19,7 @@ var hunger : int;
 var hasWorkedToday : bool = false;
 var illnessLevel : int;
 var medicineCount : int;
-var accident : bool = false;
+var accident : bool = true;
 var newPLayer: bool = true;
 
 # shop

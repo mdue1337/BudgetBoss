@@ -6,8 +6,12 @@ func _ready():
 func _on_Radio_pressed():
 	if Gs.radioParts == 5:
 		if Gs.bills == 0:
-			Gs.emit_signal("save_leaderboard")
-			get_tree().change_scene("res://Scenes/gameWin.tscn")
+			if Gs.work == 3:
+				Gs.emit_signal("save_leaderboard")
+				get_tree().change_scene("res://Scenes/gameWin.tscn")
+			else:
+				get_node("AcceptDialog").dialog_text = "Du skal huske at få købt alle bøgerne og lære en masse om økonomi"
+				get_node("AcceptDialog").visible = true
 		else:
 			get_node("AcceptDialog").dialog_text = "Man løber altså ikke fra sine regninger. Betal dine regninger før du kan slutte spillet"
 			get_node("AcceptDialog").visible = true

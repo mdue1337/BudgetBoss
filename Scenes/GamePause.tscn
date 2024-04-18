@@ -65,12 +65,12 @@ margin_bottom = 127.0
 text = "Exit *"
 
 [node name="SaveGameConfirm" type="ConfirmationDialog" parent="CenterContainer/VBoxContainer/ExitBtn"]
-margin_left = 535.0
-margin_top = 318.0
-margin_right = 749.0
-margin_bottom = 413.0
+margin_left = 526.0
+margin_top = 317.0
+margin_right = 740.0
+margin_bottom = 412.0
 mouse_filter = 2
-dialog_text = "              Save game?"
+dialog_text = "                Save game?"
 script = ExtResource( 2 )
 __meta__ = {
 "_editor_description_": ""

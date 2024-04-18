@@ -72,9 +72,6 @@ margin_right = 372.0
 margin_bottom = 515.0
 dialog_text = "Du har allerede arbejdet i dag. Gå væk med dig"
 
-[node name="Node2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( -678, -427 )
-
 [node name="TutorialText" type="Node2D" parent="."]
 script = ExtResource( 12 )
 
@@ -142,6 +139,9 @@ text = "Gå på markedet for at købe viden, mecicin og radio-dele"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -678, -427 )
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_left = -674.0

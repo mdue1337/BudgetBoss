@@ -58,6 +58,7 @@ theme = ExtResource( 2 )
 text = "Master Volume"
 
 [node name="Music" type="HSlider" parent="."]
+visible = false
 margin_left = 73.0
 margin_top = 443.0
 margin_right = 326.0
