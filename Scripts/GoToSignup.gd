@@ -1,3 +1,5 @@
+# SignupButton script
+
 extends TextureButton
 
 func _on_SignupButton_pressed():
