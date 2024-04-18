@@ -37,6 +37,24 @@ custom_fonts/font = SubResource( 1 )
 text = "LEADERBOARD"
 align = 1
 
+[node name="MAX_MONEY" type="Label" parent="."]
+margin_left = 440.0
+margin_top = 152.0
+margin_right = 527.0
+margin_bottom = 169.0
+custom_fonts/font = SubResource( 2 )
+text = "MAX MONEY"
+align = 1
+
+[node name="MIN_DAYS" type="Label" parent="."]
+margin_left = 748.0
+margin_top = 152.0
+margin_right = 835.0
+margin_bottom = 169.0
+custom_fonts/font = SubResource( 3 )
+text = "MIN DAYS"
+align = 1
+
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 margin_left = 418.0

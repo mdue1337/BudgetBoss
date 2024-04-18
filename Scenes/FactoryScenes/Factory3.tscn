@@ -109,6 +109,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Forkert" type="AcceptDialog" parent="."]
+visible = true
+margin_left = 599.0
+margin_top = 313.0
+margin_right = 729.0
+margin_bottom = 371.0
+dialog_text = "ARGHH; Prøv igen"
+
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 visible = true
 margin_left = 201.0

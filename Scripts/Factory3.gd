@@ -39,6 +39,9 @@ func answer(svar):
 		answergen()
 	else:
 		print("forkert");
+		get_node("Forkert").visible = true
+		yield(get_tree().create_timer(1), "timeout")
+		get_node("Forkert").visible = false
 
 func answergen():
 	if(questArr.size() == 0): #case hvis alle er svaret
