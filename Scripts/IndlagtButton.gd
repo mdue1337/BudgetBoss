@@ -7,6 +7,14 @@ func _ready():
 		get_parent().get_node("Node2D2").visible = false
 		get_parent().get_node("Accident").visible = true
 		get_parent().get_node("Accidentstuff").visible = true
+		
+		if Gs.hasHadAccident != true:
+			Gs.achievementDB = 12
+			Gs.emit_signal("add_user_achievement")
+			var achievement = get_parent().get_node("AchievementPopUp") 
+			achievement.call("write_label", Gs.achievementDB)
+			achievement.visible = true
+			Gs.hasHadAccident = true
 
 func _on_Medicin_pressed():
 	if (Gs.medicineCount > 0):
