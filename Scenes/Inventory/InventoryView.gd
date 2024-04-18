@@ -28,4 +28,19 @@ func updateCountRadio():
 	$ColorRect/RadioParts/Labe.text = str(Gs.radioParts) + "/5"
 
 func _on_TextureButton_pressed():
-	visible = false;
+	hide()
+	get_node("EconomyKnowledge/NoKnowledge").visible = false
+
+func _on_bookbutton_pressed():
+	print("bookbutton pressed ")
+	if Gs.work == 3:
+		print("all books shown")
+		get_node("EconomyKnowledge/Budget").visible = true
+		get_node("EconomyKnowledge/Inflation").visible = true
+		get_node("EconomyKnowledge/Renter").visible = true
+	if Gs.work == 2:
+		print("Budget book shown")
+		get_node("EconomyKnowledge/Budget").visible = true
+	if Gs.work == 1:
+		print("no books shown")
+		get_node("EconomyKnowledge/NoKnowledge").visible = true

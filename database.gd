@@ -26,7 +26,7 @@ func _ready():
 	Gs.connect("add_user_achievement", self, "add_user_achievement")
 	Gs.connect("get_user_achievements", self, "get_user_achievements")
 	Gs.connect("load_game_five", self, "load_game_five")
-	# request_nonce()
+	request_nonce()
 
 func temp(response):
 	print(response["response"]["data"])

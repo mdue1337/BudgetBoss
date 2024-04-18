@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Inventory/InventoryView.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Inventory/medicine.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Inventory/radiopart.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/GUI pack/ArrowLeft/Default.png" type="Texture" id=4]
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scripts/InventroyInflationButton.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Images/GUI pack/Panel/Body/Headless.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/InventoryRentButton.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/InventoryBudgetButton.gd" type="Script" id=9]
 
 [node name="Inventory" type="Control"]
 script = ExtResource( 1 )
@@ -133,4 +137,135 @@ margin_bottom = 99.6
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 4 )
 
+[node name="bookbutton" type="TextureButton" parent="ColorRect"]
+margin_left = 173.6
+margin_top = 122.0
+margin_right = 213.6
+margin_bottom = 162.0
+
+[node name="EconomyKnowledge" type="Node" parent="."]
+
+[node name="Inflation" type="TextureRect" parent="EconomyKnowledge"]
+visible = false
+margin_left = 89.0
+margin_top = 70.0
+margin_right = 1236.0
+margin_bottom = 740.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="EconomyKnowledge/Inflation"]
+margin_left = 14.0
+margin_top = 8.0
+margin_right = 1149.0
+margin_bottom = 1400.0
+custom_fonts/font = ExtResource( 5 )
+text = "Inflation:
+I en markedsøkonomi kan priserne på varer og tjenester altid variere. Nogle priser stiger, andre priser falder. Der er tale om inflation, når der er en generel stigning i priserne, ikke kun på en enkelt vare eller tjeneste. Det betyder, at du kan købe mindre for 1 euro i dag, end du kunne i går. Eller sagt på en anden måde: inflation gør pengene mindre værd over tid.
+
+Når inflationen måles, medregnes alle varer og tjenester, som husholdningerne forbruger. Det vil sige:
+
+    dagligvarer (fx fødevarer, aviser og benzin)
+    varige forbrugsgoder (fx tøj, pc'er og vaskemaskiner)
+    tjenester (fx besøg hos frisøren, forsikring og lejebolig)
+
+
+Du har nu lært ny viden, og kan arbejde et bedre 
+arbejde i fabrikken.                          Kilde: ECB"
+autowrap = true
+
+[node name="TextureButton" type="TextureButton" parent="EconomyKnowledge/Inflation"]
+margin_left = 1055.0
+margin_top = 565.0
+margin_right = 1143.0
+margin_bottom = 653.0
+texture_normal = ExtResource( 4 )
+script = ExtResource( 6 )
+
+[node name="Renter" type="TextureRect" parent="EconomyKnowledge"]
+visible = false
+margin_left = 89.0
+margin_top = 70.0
+margin_right = 1236.0
+margin_bottom = 740.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="EconomyKnowledge/Renter"]
+margin_left = 14.0
+margin_top = 8.0
+margin_right = 1149.0
+margin_bottom = 1400.0
+custom_fonts/font = ExtResource( 5 )
+text = "Renter:
+Renten er prisen på at låne penge og de penge, du tjener på din opsparing. Låner du penge i banken er renten med andre ord den pris, du betaler for dit lån. Når du sætter penge ind på en opsparing, er renten det afkast, banken giver dig på opsparingen.
+
+Renter er et udtryk for denne pris eller dette afkast som en procentdel af det beløb, du låner af banken eller til banken (idet du \"låner\" banken din opsparing).
+
+
+
+
+
+
+
+Side 1/2                                   Kilde: ECB"
+autowrap = true
+
+[node name="TextureButton" type="TextureButton" parent="EconomyKnowledge/Renter"]
+margin_left = 1055.0
+margin_top = 566.0
+margin_right = 1143.0
+margin_bottom = 654.0
+texture_normal = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="Budget" type="TextureRect" parent="EconomyKnowledge"]
+visible = false
+margin_left = 89.0
+margin_top = 70.0
+margin_right = 1236.0
+margin_bottom = 740.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="EconomyKnowledge/Budget"]
+margin_left = 14.0
+margin_top = 8.0
+margin_right = 1149.0
+margin_bottom = 1400.0
+custom_fonts/font = ExtResource( 5 )
+text = "Budget:
+Et budget er en oversigt over dine forventede indtægter og udgifter for en bestemt periode. Ved at lave en opgørelse over de to forhold kan du forsøge at forudsige fremtiden for din økonomi. Budgettet er et redskab i styringen af økonomien.
+Hvis du udarbejder et budget, giver det dig et klart overblik over din økonomi. Er der flere udgifter end indtægter? Og hvordan er det generelle størrelsesforhold i mellem de to? Hvor meget har du til din tilbage på kistebunden, når regningerne er betalt?
+Typisk laver man en budget et år frem. Husk, at både indtægter og udgifter kan skifte fra måned til måned – det er vigtigt, at det tælles med i budgettet. Dertil er det en god idé at kigge dit budget efter i sømmene ind i mellem, og ikke først når der er gået et år.
+
+Du har nu lært ny viden, og kan arbejde et bedre 
+arbejde i fabrikken.                          Kilde: ECB"
+autowrap = true
+
+[node name="TextureButton" type="TextureButton" parent="EconomyKnowledge/Budget"]
+margin_left = 1057.0
+margin_top = 567.0
+margin_right = 1145.0
+margin_bottom = 655.0
+texture_normal = ExtResource( 4 )
+script = ExtResource( 9 )
+
+[node name="NoKnowledge" type="Label" parent="EconomyKnowledge"]
+visible = false
+margin_left = 450.0
+margin_top = 500.0
+margin_right = 1058.0
+margin_bottom = 810.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 5 )
+text = "Du har ikke købt nogen bøger. Køb en for at lære noget nyt og få et bedre arbejde"
+align = 1
+valign = 1
+autowrap = true
+
 [connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="ColorRect/bookbutton" to="." method="_on_bookbutton_pressed"]
+[connection signal="pressed" from="EconomyKnowledge/Inflation/TextureButton" to="EconomyKnowledge/Inflation/TextureButton" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="EconomyKnowledge/Renter/TextureButton" to="EconomyKnowledge/Renter/TextureButton" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="EconomyKnowledge/Budget/TextureButton" to="EconomyKnowledge/Budget/TextureButton" method="_on_TextureButton_pressed"]

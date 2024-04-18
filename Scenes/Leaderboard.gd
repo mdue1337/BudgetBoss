@@ -34,9 +34,7 @@ func updateMoney(data):
 		if i == 0:
 			$VBoxContainer2/Label.text = label_text
 		else:
-			var label = Label.new()
-			label.text = label_text
-			$VBoxContainer2.add_child(label)
+			$VBoxContainer2/Label.text = $VBoxContainer2/Label.text + "\n\n\n\n" + label_text
 
 func updateDays(data):
 	var count = data.size()
@@ -49,9 +47,19 @@ func updateDays(data):
 		if i == 0:
 			$VBoxContainer3/Label.text = label_text
 		else:
-			var label = Label.new()
-			label.text = label_text
-			$VBoxContainer3.add_child(label)
+			$VBoxContainer3/Label.text = $VBoxContainer3/Label.text + "\n\n\n\n" + label_text
+	
+	#dynamic show boxes
+	if count > 0:
+		get_node("TextureRect").visible = true
+	if count > 1:
+		get_node("TextureRect2").visible = true
+	if count > 2:
+		get_node("TextureRect3").visible = true
+	if count > 3:
+		get_node("TextureRect4").visible = true
+	if count > 4:
+		get_node("TextureRect5").visible = true
 	
 	daysUpdated = true
 	secondQuery()

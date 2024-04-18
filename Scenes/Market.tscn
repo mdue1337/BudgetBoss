@@ -94,6 +94,9 @@ position = Vector2( 1025, 91 )
 
 [node name="EconomyKnowledge" type="Node" parent="."]
 
+[node name="TEKSTERNE HER ER MODIFICEREDE" type="Node2D" parent="EconomyKnowledge"]
+visible = false
+
 [node name="Inflation" type="TextureRect" parent="EconomyKnowledge"]
 visible = false
 margin_left = 89.0
@@ -119,8 +122,7 @@ Når inflationen måles, medregnes alle varer og tjenester, som husholdningerne 
     tjenester (fx besøg hos frisøren, forsikring og lejebolig)
 
 
-Du har nu lært ny viden, og kan arbejde et bedre 
-arbejde i fabrikken.                          Kilde: ECB"
+Denne viden tillader arbejde på level 3 i fabrikken                                                       Kilde: ECB"
 autowrap = true
 
 [node name="TextureButton" type="TextureButton" parent="EconomyKnowledge/Inflation"]
@@ -157,7 +159,7 @@ Renter er et udtryk for denne pris eller dette afkast som en procentdel af det b
 
 
 
-Side 1/2                                   Kilde: ECB"
+                                          Kilde: ECB"
 autowrap = true
 
 [node name="TextureButton" type="TextureButton" parent="EconomyKnowledge/Renter"]
@@ -188,8 +190,7 @@ Et budget er en oversigt over dine forventede indtægter og udgifter for en best
 Hvis du udarbejder et budget, giver det dig et klart overblik over din økonomi. Er der flere udgifter end indtægter? Og hvordan er det generelle størrelsesforhold i mellem de to? Hvor meget har du til din tilbage på kistebunden, når regningerne er betalt?
 Typisk laver man en budget et år frem. Husk, at både indtægter og udgifter kan skifte fra måned til måned – det er vigtigt, at det tælles med i budgettet. Dertil er det en god idé at kigge dit budget efter i sømmene ind i mellem, og ikke først når der er gået et år.
 
-Du har nu lært ny viden, og kan arbejde et bedre 
-arbejde i fabrikken.                          Kilde: ECB"
+Denne viden tillader arbejde på level 2                                                                    Kilde: ECB"
 autowrap = true
 
 [node name="TextureButton" type="TextureButton" parent="EconomyKnowledge/Budget"]
