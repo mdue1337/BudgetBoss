@@ -86,6 +86,8 @@ dialog_text = "Du har endnu ikke unlockedd dette niveau.
 Køb adgang ved at læse en bog fra markedet"
 
 [node name="AchievementPopUp" parent="." instance=ExtResource( 7 )]
+visible = false
+position = Vector2( -164, -61 )
 
 [connection signal="pressed" from="Factory" to="." method="_on_Factory_pressed"]
 [connection signal="pressed" from="Factory2" to="." method="_on_Factory2_pressed"]

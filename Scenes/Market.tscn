@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Images/market.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/background.jpeg" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/BackButton.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Images/GUI pack/ArrowLeft/Default.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Images/GUI pack/Panel/Body/Headless.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/AchievementPopUp.tscn" type="PackedScene" id=11]
 
 [node name="Market" type="Node2D"]
 position = Vector2( 676, 475 )
@@ -200,6 +201,10 @@ margin_right = 1145.0
 margin_bottom = 589.0
 texture_normal = ExtResource( 9 )
 script = ExtResource( 8 )
+
+[node name="AchievementPopUp" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( -198, -410 )
 
 [connection signal="pressed" from="MedicinButton" to="." method="_on_MedicinButton_pressed"]
 [connection signal="pressed" from="WorkButton" to="." method="_on_WorkButton_pressed"]

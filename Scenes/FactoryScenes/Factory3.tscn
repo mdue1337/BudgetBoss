@@ -124,7 +124,9 @@ visible = false
 visible = false
 
 [node name="AchievementPopUp" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="confirmed" from="AcceptDialog" to="." method="_on_AcceptDialog_confirmed"]
