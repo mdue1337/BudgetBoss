@@ -24,6 +24,7 @@ func handle_response(response):
 	Gs.medicineCount = 0;
 	
 	## reset all
+	Gs.moneyPerson = 0
 	Gs.hasHadAccident = false
 	Gs.hasWorkedToday = false;
 	Gs.eatCount = 0;
