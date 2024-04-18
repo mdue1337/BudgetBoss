@@ -156,3 +156,4 @@ position = Vector2( -193, -385 )
 [connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_AcceptDialog_confirmed"]
 [connection signal="confirmed" from="SleepConfirm" to="SleepConfirm" method="_on_SleepConfirm_confirmed"]
+[connection signal="confirmed" from="WARNING" to="." method="_on_WARNING_confirmed"]

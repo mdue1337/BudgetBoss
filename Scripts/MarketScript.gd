@@ -78,17 +78,15 @@ func _on_RadioButton_pressed():
 		Gs.emit_signal("bankCounter", -Gs.upgradePricesRadio[Gs.radioParts]);
 		Gs.radioParts += 1
 		if Gs.radioParts == 1:
-			#get_tree().change_scene("res://Scenes/Market.tscn")
-			Gs.achievementDB == 7
+			Gs.achievementDB = 7
 			Gs.emit_signal("add_user_achievement")
 			var achievement = get_node("AchievementPopUp") 
 			achievement.call("write_label", Gs.achievementDB)
 			achievement.visible = true
 			yield(get_tree().create_timer(3), "timeout")
 			get_tree().change_scene("res://Scenes/Market.tscn")
-			
 		if Gs.radioParts == 5:
-			Gs.achievementDB == 8
+			Gs.achievementDB = 8
 			Gs.emit_signal("add_user_achievement")
 			var achievement = get_node("AchievementPopUp") 
 			achievement.call("write_label", Gs.achievementDB)

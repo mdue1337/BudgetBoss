@@ -47,27 +47,6 @@ func answergen():
 		Gs.hasWorkedToday = true;
 		Gs.emit_signal("workpay", 3)
 		Gs.emit_signal("hungerCounter", -2)
-		Gs.workCount += 1
-	if Gs.workCount == 10:
-		Gs.achievementDB = 4
-		Gs.emit_signal("add_user_achievement")
-		var achievement = get_node("AchievementPopUp") 
-		achievement.call("write_label", Gs.achievementDB)
-		achievement.visible = true
-	if Gs.workCount == 25:
-		Gs.achievementDB = 5
-		Gs.emit_signal("add_user_achievement")
-		var achievement = get_node("AchievementPopUp") 
-		achievement.call("write_label", Gs.achievementDB)
-		achievement.visible = true
-	if Gs.workCount == 50:
-		Gs.achievementDB = 6
-		Gs.emit_signal("add_user_achievement")
-		var achievement = get_node("AchievementPopUp") 
-		achievement.call("write_label", Gs.achievementDB)
-		achievement.visible = true
-		yield(get_tree().create_timer(1), "timeout")
-		get_tree().change_scene("res://Scenes/Camp.tscn")
 		
 	else:
 		print("---------------------------")
@@ -118,3 +97,41 @@ func populateAnswers(question):
 			realsvar = 1
 		_: #catch error
 			print("SWITCHBOARD ERROR")
+
+
+func _on_AcceptDialog_confirmed():
+	Gs.workCount += 1
+	if Gs.workCount == 1:
+		Gs.achievementDB = 1
+		Gs.emit_signal("add_user_achievement")
+		var achievement = get_node("AchievementPopUp") 
+		achievement.call("write_label", Gs.achievementDB)
+		achievement.visible = true
+		yield(get_tree().create_timer(3), "timeout")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
+	if Gs.workCount == 10:
+		Gs.achievementDB = 4
+		Gs.emit_signal("add_user_achievement")
+		var achievement = get_node("AchievementPopUp") 
+		achievement.call("write_label", Gs.achievementDB)
+		achievement.visible = true
+		yield(get_tree().create_timer(3), "timeout")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
+	if Gs.workCount == 25:
+		Gs.achievementDB = 5
+		Gs.emit_signal("add_user_achievement")
+		var achievement = get_node("AchievementPopUp") 
+		achievement.call("write_label", Gs.achievementDB)
+		achievement.visible = true
+		yield(get_tree().create_timer(3), "timeout")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
+	if Gs.workCount == 50:
+		Gs.achievementDB = 6
+		Gs.emit_signal("add_user_achievement")
+		var achievement = get_node("AchievementPopUp") 
+		achievement.call("write_label", Gs.achievementDB)
+		achievement.visible = true
+		yield(get_tree().create_timer(3), "timeout")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
+	else:
+		get_tree().change_scene("res://Scenes/Camp.tscn")
