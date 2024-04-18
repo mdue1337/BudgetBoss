@@ -3,9 +3,9 @@
 extends TextureButton
 
 func _on_Button_pressed():
-	var password_input = get_parent().get_node("NinePatchRect/VBoxContainer/Password").text
+	var password_input = get_parent().get_node("NinePatchRect2/VBoxContainer/Password").text
 	print(password_input)
-	var email_input = get_parent().get_node("NinePatchRect/VBoxContainer/Email").text
+	var email_input = get_parent().get_node("NinePatchRect2/VBoxContainer/Email").text
 	print(email_input)
 	
 	#checker om felterne er tomme

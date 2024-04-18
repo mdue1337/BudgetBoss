@@ -74,7 +74,7 @@ func _http_request_completed(_result, _response_code, _headers, _body):
 	if response['command'] == "get_nonce":
 		nonce = response['response']['nonce']
 		print("Get nonce: " + response['response']['nonce'])
-		return	
+		return
 	
 	Gs.emit_signal("response", response);
 

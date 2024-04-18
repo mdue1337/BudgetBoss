@@ -26,7 +26,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
 anchor_left = 0.305
 anchor_right = 0.305
 margin_left = 9.59998
@@ -37,13 +37,13 @@ texture = ExtResource( 8 )
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect2"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 370.0
 margin_bottom = 465.0
 
-[node name="EmailTitle" type="Label" parent="NinePatchRect/VBoxContainer"]
+[node name="EmailTitle" type="Label" parent="NinePatchRect2/VBoxContainer"]
 margin_right = 320.0
 margin_bottom = 97.0
 theme = ExtResource( 3 )
@@ -54,13 +54,13 @@ text = "
 EMAIL:"
 align = 1
 
-[node name="Email" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+[node name="Email" type="LineEdit" parent="NinePatchRect2/VBoxContainer"]
 margin_top = 101.0
 margin_right = 320.0
 margin_bottom = 125.0
 placeholder_text = "Email address"
 
-[node name="PasswordTitle" type="Label" parent="NinePatchRect/VBoxContainer"]
+[node name="PasswordTitle" type="Label" parent="NinePatchRect2/VBoxContainer"]
 margin_top = 129.0
 margin_right = 320.0
 margin_bottom = 186.0
@@ -70,7 +70,7 @@ text = "
 PASSWORD:"
 align = 1
 
-[node name="Password" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+[node name="Password" type="LineEdit" parent="NinePatchRect2/VBoxContainer"]
 margin_top = 190.0
 margin_right = 320.0
 margin_bottom = 214.0
