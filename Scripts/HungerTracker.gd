@@ -12,8 +12,10 @@ func updateHunger(count : int): ## -4
 	print("Gs after " + str(Gs.hunger))
 	if (Gs.hunger > 10):
 		Gs.hunger = 10
-	if (Gs.hunger < -1):
+	elif (Gs.hunger <= -1):
 		get_tree().change_scene("res://Scenes/GameLose.tscn")
+		return
+	
 	displayHunger()
 	
 	var rng = RandomNumberGenerator.new()
