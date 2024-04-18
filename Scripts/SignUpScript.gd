@@ -28,5 +28,6 @@ func handle_response(response):
 		get_owner().visible = false
 		get_tree().change_scene("res://Scenes/Main_Menu.tscn")
 	else:
+		Gs.emit_signal("get_nonce")
 		var popup = get_parent().get_node("Fail")
 		popup.visible = true

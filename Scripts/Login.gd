@@ -29,6 +29,7 @@ func handle_response(response):
 		var popup = get_parent().get_node("Lose")
 		popup.visible = true
 		popup.dialog_text = "User not found"
+		Gs.emit_signal("get_nonce")
 	else:
 		print(response.response["data"][0]["Id"])
 		Gs.userId = int(response.response["data"][0]["Id"])
