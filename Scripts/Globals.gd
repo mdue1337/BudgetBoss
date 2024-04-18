@@ -9,7 +9,7 @@ var password : String = "test";
 var email : String  = "test@gmail.com";
 var userId : int;
 var gameId : int;
-var moneyBank : int = 50000;
+var moneyBank : int;
 var moneyPerson : int;
 var days : int;
 var bills : int;
