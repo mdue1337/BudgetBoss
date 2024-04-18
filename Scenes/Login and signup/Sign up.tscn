@@ -132,11 +132,14 @@ texture_hover = ExtResource( 1 )
 script = ExtResource( 5 )
 
 [node name="Fail" type="AcceptDialog" parent="."]
+visible = true
 margin_left = 559.0
 margin_top = 294.0
 margin_right = 642.0
 margin_bottom = 352.0
-dialog_text = "Fail"
+dialog_text = "          Din bruger kunne ikke laves!
+Sørg for at du har skrevet noget i alle fælter
+og at du har skrevet en rigtig email adresse"
 
 [node name="Win" type="AcceptDialog" parent="."]
 margin_left = 391.0
