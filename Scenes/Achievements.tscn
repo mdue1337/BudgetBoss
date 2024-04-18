@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Images/skibidi Steve(1).jpg" type="Texture" id=1]
 [ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Other/DefaultCartoonFont.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/Images/GUI pack/BackMainMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends ScrollContainer
 
-
 const FONT_PATH = \"res://fonts/poco/Poco.tres\"
+var numOfAchievements : int = 0;
 
 var achievement_data_DB = [];
 
@@ -37,7 +38,7 @@ func insert_achievement():
 	var font = load(\"res://fonts/poco/Poco.tres\")
 
 	for data_point in achievement_data_DB:
-		
+		numOfAchievements += 1
 		# Opret Panel for achievement
 		var panel = Panel.new()
 		panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -61,14 +62,19 @@ func insert_achievement():
 		des_label.rect_position.y = title_label.rect_size.y + 25  
 		des_label.add_font_override(\"font\", font)  
 		panel.add_child(des_label)
-
+	
 	set_custom_minimum_size(Vector2(300, 500))
+	get_parent().get_parent().get_node(\"count\").text = str(numOfAchievements) + \" out of \" + str(Gs.AchievementsName.size())
 "
 
 [sub_resource type="DynamicFont" id=2]
 size = 80
 use_filter = true
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+font_data = ExtResource( 5 )
 
 [node name="Node2D2" type="Node2D"]
 
@@ -93,6 +99,16 @@ margin_bottom = 91.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 2 )
 text = "Achievements"
+align = 1
+
+[node name="count" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 88.0
+margin_right = 1275.0
+margin_bottom = 172.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 3 )
+text = "? out of ?"
 align = 1
 
 [node name="BackButton" parent="." instance=ExtResource( 4 )]
