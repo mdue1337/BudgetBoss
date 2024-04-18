@@ -32,6 +32,7 @@ func _on_GameWin_confirmed():
 	Gs.emit_signal("workpay", 2)
 	Gs.emit_signal("hungerCounter", -3)
 	Gs.workCount += 1
+	print(Gs.workCount)
 	if Gs.workCount == 1:
 		Gs.achievementDB = 1
 		Gs.emit_signal("add_user_achievement")

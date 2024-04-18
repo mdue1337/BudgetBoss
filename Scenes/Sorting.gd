@@ -51,6 +51,7 @@ func is_game_won():
 func _on_GameWin_confirmed():
 	Gs.hasWorkedToday = true;
 	Gs.workCount += 1
+	print(Gs.workCount)
 	Gs.emit_signal("workpay",1)
 	Gs.emit_signal("hungerCounter", -4)
 	if Gs.workCount == 1:
@@ -59,33 +60,31 @@ func _on_GameWin_confirmed():
 		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
-		yield(get_tree().create_timer(3), "timeout")
-		get_tree().change_scene("res://Scenes/Camp.tscn")
-	if Gs.workCount == 10:
+		yield(get_tree().create_timer(2), "timeout")
+		get_tree().change_scene("res://Scenes/Factory.tscn")
+	elif Gs.workCount == 10:
 		Gs.achievementDB = 4
 		Gs.emit_signal("add_user_achievement")
 		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
-		yield(get_tree().create_timer(3), "timeout")
-		get_tree().change_scene("res://Scenes/Camp.tscn")
-	if Gs.workCount == 25:
+		yield(get_tree().create_timer(2), "timeout")
+		get_tree().change_scene("res://Scenes/Factory.tscn")
+	elif Gs.workCount == 25:
 		Gs.achievementDB = 5
 		Gs.emit_signal("add_user_achievement")
 		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
-		yield(get_tree().create_timer(3), "timeout")
+		yield(get_tree().create_timer(2), "timeout")
 		get_tree().change_scene("res://Scenes/Camp.tscn")
-	if Gs.workCount == 50:
+	elif Gs.workCount == 50:
 		Gs.achievementDB = 6
 		Gs.emit_signal("add_user_achievement")
 		var achievement = get_node("AchievementPopUp") 
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
-		yield(get_tree().create_timer(3), "timeout")
-		get_tree().change_scene("res://Scenes/Camp.tscn")
+		yield(get_tree().create_timer(2), "timeout")
+		get_tree().change_scene("res://Scenes/Factory.tscn")
 	else:
-		get_tree().change_scene("res://Scenes/Camp.tscn")
-		
-	
+		get_tree().change_scene("res://Scenes/Factory.tscn")

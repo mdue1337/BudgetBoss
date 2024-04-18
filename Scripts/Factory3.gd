@@ -101,6 +101,7 @@ func populateAnswers(question):
 
 func _on_AcceptDialog_confirmed():
 	Gs.workCount += 1
+	print(Gs.workCount)
 	if Gs.workCount == 1:
 		Gs.achievementDB = 1
 		Gs.emit_signal("add_user_achievement")
