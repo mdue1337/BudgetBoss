@@ -10,7 +10,7 @@ func _on_ConfirmationDialog_confirmed():
 		Gs.emit_signal("hungerCounter", 5)
 		Gs.eatCount += 1
 	else:
-		nodeInfo.dialog_text = "No food for you"
+		nodeInfo.dialog_text = "Du har ikke nok penge i banken eller også er du ikke sulten."
 		nodeInfo.visible = true;
 		
 	if Gs.eatCount == 1:

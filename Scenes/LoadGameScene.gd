@@ -75,8 +75,10 @@ func loadGame(response):
 		Gs.medicineCount = response.response["data"][0]["MedicineCount"]
 		
 		## reset local
-		Gs.hasHadAccident = false;
+		Gs.moneyPerson = 0
 		Gs.hasWorkedToday = false;
+		Gs.bills = 0;
+		Gs.hasHadAccident = false;
 		Gs.eatCount = 0;
 		Gs.workCount = 0;
 		Gs.sleepCount = 0;

@@ -38,7 +38,7 @@ margin_right = 238.261
 margin_bottom = 122.288
 theme = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 12 )
 text = "New game"
 
 [node name="New game" type="TextureButton" parent="TextureRect"]
@@ -70,9 +70,9 @@ valign = 1
 visible = false
 margin_left = 253.0
 margin_top = 225.0
-margin_right = 595.0
-margin_bottom = 387.0
-color = Color( 0, 0, 0, 0.588235 )
+margin_right = 613.0
+margin_bottom = 453.0
+color = Color( 0, 0, 0, 0.658824 )
 
 [node name="GameWarning" type="Label" parent="TextureRect/GameWarning"]
 margin_left = 2.35152

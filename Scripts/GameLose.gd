@@ -21,8 +21,14 @@ func handle_response(response):
 		
 		Gs.moneyPerson = 0
 		Gs.hasWorkedToday = false;
-		Gs.bills = 0
+		Gs.bills = 0;
+		Gs.hasHadAccident = false;
+		Gs.eatCount = 0;
+		Gs.workCount = 0;
+		Gs.sleepCount = 0;
 		Gs.accident = false;
+		Gs.newPLayer = true;
+		
 		get_tree().change_scene("res://Scenes/Map.tscn")
 	else:
 		pass

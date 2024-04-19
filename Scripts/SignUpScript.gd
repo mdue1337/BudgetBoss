@@ -20,10 +20,11 @@ func _on_Button_pressed():
 		popup.text = "          Din bruger kunne ikke laves! Sørg for at du har skrevet noget i alle fælter og at du har skrevet en rigtig email adresse";
 		popup.visible = true
 		print("Please provide valid username, password and email")
+		Gs.emit_signal("get_nonce")
 
 func handle_response(response):
 	if response.status != "no_return":
-		Gs.userId = int(response.response["UserId"]);
+		Gs.userId = int(response.response.data[0]["Id"]);
 		var success = get_parent().get_node("Win")
 		success.visible = true
 		get_owner().visible = false

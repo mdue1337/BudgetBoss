@@ -23,6 +23,7 @@ var answ3_3 = "De penge som nationalbanken printer";
 
 func _ready():
 	print("running answergen")
+	rng.randomize()
 	answergen()
 
 func _on_Button1_pressed():
@@ -38,6 +39,9 @@ func answer(svar):
 		answergen()
 	else:
 		print("forkert");
+		get_node("Forkert").visible = true
+		yield(get_tree().create_timer(1), "timeout")
+		get_node("Forkert").visible = false
 
 func answergen():
 	if(questArr.size() == 0): #case hvis alle er svaret
@@ -47,6 +51,7 @@ func answergen():
 		Gs.hasWorkedToday = true;
 		Gs.emit_signal("workpay", 3)
 		Gs.emit_signal("hungerCounter", -2)
+		yield(get_tree().create_timer(1), "timeout")
 		
 	else:
 		print("---------------------------")

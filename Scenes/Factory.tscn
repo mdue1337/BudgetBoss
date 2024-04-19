@@ -82,7 +82,7 @@ margin_left = 206.0
 margin_top = 283.0
 margin_right = 533.0
 margin_bottom = 359.0
-dialog_text = "Du har endnu ikke unlockedd dette niveau. 
+dialog_text = "Du har endnu ikke unlocked dette niveau. 
 Køb adgang ved at læse en bog fra markedet"
 
 [node name="AchievementPopUp" parent="." instance=ExtResource( 7 )]

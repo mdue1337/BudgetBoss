@@ -4,6 +4,7 @@ var pressed_once = false;
 
 func _on_New_game_pressed():
 	if pressed_once:
+		print(Gs.userId)
 		Gs.emit_signal("create_game")
 		Gs.connect("response", self, "handle_response")
 	else:
@@ -24,6 +25,7 @@ func handle_response(response):
 	Gs.medicineCount = 0;
 	
 	## reset all
+	Gs.moneyPerson = 0
 	Gs.hasHadAccident = false
 	Gs.hasWorkedToday = false;
 	Gs.eatCount = 0;
