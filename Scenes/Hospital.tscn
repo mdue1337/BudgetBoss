@@ -241,14 +241,15 @@ margin_bottom = -436.0
 script = ExtResource( 17 )
 
 [node name="Accident" type="AcceptDialog" parent="."]
+visible = true
 margin_left = 210.0
 margin_top = 343.0
 margin_right = 854.0
 margin_bottom = 451.0
 window_title = "Øv bøv!"
 dialog_text = "Du har uheldigvis fået en mystisk sygdom fra en månemand.
-Hvis du har medicin kan du bruge det for at kureres med det samme (tryk på ok knappen). 
-Du vil ellers blive indlag i 3 dage, hvis du ikke bruger medicinen. Det er ikke gratis at blive indlagt."
+Hvis du har medicin kan du bruge det for at kureres med det samme (brug knappen nedenfor). 
+Du vil ellers blive indlagt i 3 dage, hvis du ikke bruger medicinen. Det er ikke gratis at blive indlagt."
 
 [node name="Accidentstuff" type="Node2D" parent="."]
 visible = false

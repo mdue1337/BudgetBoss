@@ -7,6 +7,8 @@ func _on_Radio_pressed():
 	if Gs.radioParts == 5:
 		if Gs.bills == 0:
 			if Gs.work == 3:
+				Gs.emit_signal("save_game")
+				yield(get_tree().create_timer(1), "timeout")
 				Gs.emit_signal("save_leaderboard")
 				get_tree().change_scene("res://Scenes/gameWin.tscn")
 			else:

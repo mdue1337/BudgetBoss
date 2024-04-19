@@ -55,6 +55,7 @@ func _on_GameWin_confirmed():
 	print(Gs.workCount)
 	Gs.emit_signal("workpay",1)
 	Gs.emit_signal("hungerCounter", -4)
+	yield(get_tree().create_timer(1), "timeout")
 	if Gs.workCount == 1:
 		Gs.achievementDB = 1
 		Gs.emit_signal("add_user_achievement")
@@ -62,7 +63,7 @@ func _on_GameWin_confirmed():
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
 		yield(get_tree().create_timer(2), "timeout")
-		get_tree().change_scene("res://Scenes/Factory.tscn")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
 	elif Gs.workCount == 10:
 		Gs.achievementDB = 4
 		Gs.emit_signal("add_user_achievement")
@@ -70,7 +71,7 @@ func _on_GameWin_confirmed():
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
 		yield(get_tree().create_timer(2), "timeout")
-		get_tree().change_scene("res://Scenes/Factory.tscn")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
 	elif Gs.workCount == 25:
 		Gs.achievementDB = 5
 		Gs.emit_signal("add_user_achievement")
@@ -86,6 +87,6 @@ func _on_GameWin_confirmed():
 		achievement.call("write_label", Gs.achievementDB)
 		achievement.visible = true
 		yield(get_tree().create_timer(2), "timeout")
-		get_tree().change_scene("res://Scenes/Factory.tscn")
+		get_tree().change_scene("res://Scenes/Camp.tscn")
 	else:
-		get_tree().change_scene("res://Scenes/Factory.tscn")
+		get_tree().change_scene("res://Scenes/Camp.tscn")

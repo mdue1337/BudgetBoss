@@ -51,6 +51,7 @@ func answergen():
 		Gs.hasWorkedToday = true;
 		Gs.emit_signal("workpay", 3)
 		Gs.emit_signal("hungerCounter", -2)
+		yield(get_tree().create_timer(1), "timeout")
 		
 	else:
 		print("---------------------------")

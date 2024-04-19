@@ -14,15 +14,6 @@ func secondQuery():
 
 func handle_response(response):
 	var data = response.response["data"]
-	print(data)
-	
-	if data[0].has("Money"):
-		for i in range(data.size() / 2):
-			var temp = data[i]
-			data[i] = data[data.size() - 1 - i]
-			data[data.size() - 1 - i] = temp
-	
-	print(data)
 	
 	if daysUpdated == true:
 		updateMoney(data)

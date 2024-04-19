@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Leaderboard.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/GUI pack/BackMainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Other/super_ocean/Super Ocean Personal Use.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Images/GUI pack/Panel/Body/Headless.png" type="Texture" id=4]
+[ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -38,25 +39,24 @@ text = "LEADERBOARD"
 align = 1
 
 [node name="MAX_MONEY" type="Label" parent="."]
-margin_left = 440.0
+margin_left = 427.0
 margin_top = 152.0
-margin_right = 527.0
+margin_right = 555.0
 margin_bottom = 169.0
 custom_fonts/font = SubResource( 2 )
-text = "MAX MONEY"
+text = "MAX MONEY LEFT"
 align = 1
 
 [node name="MIN_DAYS" type="Label" parent="."]
 margin_left = 748.0
 margin_top = 152.0
-margin_right = 835.0
+margin_right = 862.0
 margin_bottom = 169.0
 custom_fonts/font = SubResource( 3 )
-text = "MIN DAYS"
+text = "MINIMUM DAYS"
 align = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 margin_left = 418.0
 margin_top = 171.0
 margin_right = 898.0
@@ -66,7 +66,6 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-visible = false
 margin_left = 418.0
 margin_top = 252.0
 margin_right = 898.0
@@ -76,7 +75,6 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-visible = false
 margin_left = 418.0
 margin_top = 333.0
 margin_right = 898.0
@@ -86,7 +84,6 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="TextureRect4" type="TextureRect" parent="."]
-visible = false
 margin_left = 418.0
 margin_top = 414.0
 margin_right = 898.0
@@ -96,7 +93,6 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="TextureRect5" type="TextureRect" parent="."]
-visible = false
 margin_left = 418.0
 margin_top = 495.0
 margin_right = 898.0
@@ -105,28 +101,36 @@ rect_pivot_offset = Vector2( 178, 27 )
 texture = ExtResource( 4 )
 expand = true
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 618.0
+margin_top = 108.0
+margin_right = 694.0
+margin_bottom = 587.0
+color = Color( 0.713726, 0.305882, 0.305882, 1 )
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 margin_left = 440.0
 margin_top = 192.0
 margin_right = 527.0
 margin_bottom = 632.0
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="VBoxContainer2"]
-margin_right = 87.0
-margin_bottom = 17.0
-custom_fonts/font = SubResource( 2 )
+margin_right = 150.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 5 )
 text = "No data"
-align = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
-margin_left = 740.0
-margin_top = 192.0
-margin_right = 827.0
-margin_bottom = 632.0
+margin_left = 715.0
+margin_top = 191.0
+margin_right = 865.0
+margin_bottom = 631.0
+rect_scale = Vector2( 0.5, 0.5 )
 
 [node name="Label" type="Label" parent="VBoxContainer3"]
-margin_right = 87.0
-margin_bottom = 17.0
-custom_fonts/font = SubResource( 3 )
+margin_right = 150.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 5 )
 text = "No data"
 align = 1
