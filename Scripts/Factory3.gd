@@ -105,7 +105,6 @@ func populateAnswers(question):
 
 
 func _on_AcceptDialog_confirmed():
-	yield(get_tree().create_timer(1), "timeout")
 	Gs.workCount += 1
 	print(Gs.workCount)
 	if Gs.workCount == 1:

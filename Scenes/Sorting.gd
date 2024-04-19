@@ -51,8 +51,6 @@ func is_game_won():
 func _on_GameWin_confirmed():
 	Gs.hasWorkedToday = true;
 	Gs.workCount += 1
-	yield(get_tree().create_timer(1), "timeout")
-	print(Gs.workCount)
 	Gs.emit_signal("workpay",1)
 	Gs.emit_signal("hungerCounter", -4)
 	yield(get_tree().create_timer(1), "timeout")

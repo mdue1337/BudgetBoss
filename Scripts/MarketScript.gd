@@ -72,7 +72,10 @@ func _on_WorkButton_pressed():
 		get_node("AcceptDialog").visible = true
 
 func _on_RadioButton_pressed():
-	if  Gs.moneyBank >= Gs.upgradePricesRadio[Gs.radioParts]:
+	if Gs.radioParts >= 5:
+		print("bruger prøvede på at købe 6 parts, not possbile")
+		get_tree().change_scene("res://Scenes/Market.tscn")
+	elif  Gs.moneyBank >= Gs.upgradePricesRadio[Gs.radioParts]:
 		Gs.emit_signal("bankCounter", -Gs.upgradePricesRadio[Gs.radioParts]);
 		Gs.radioParts += 1
 		if Gs.radioParts == 1:
