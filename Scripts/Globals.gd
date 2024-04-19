@@ -15,7 +15,7 @@ var days : int;
 var bills : int;
 var radioParts : int;
 var work : int;
-var hunger : int = 4;
+var hunger : int;
 var hasWorkedToday : bool = false;
 var illnessLevel : int;
 var medicineCount : int;

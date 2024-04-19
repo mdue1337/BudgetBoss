@@ -1,6 +1,7 @@
 extends Control
 
 func _on_TextureButton2_pressed():
+	Gs.loadGameId = Gs.gameId
 	Gs.emit_signal("load_game")
 	Gs.connect("response", self, "handle_response")
 
