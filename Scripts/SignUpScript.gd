@@ -17,6 +17,7 @@ func _on_Button_pressed():
 		Gs.connect("response", self, "handle_response")
 	else:
 		var popup = get_parent().get_node("Fail")
+		popup.text = "          Din bruger kunne ikke laves! Sørg for at du har skrevet noget i alle fælter og at du har skrevet en rigtig email adresse";
 		popup.visible = true
 		print("Please provide valid username, password and email")
 
@@ -30,4 +31,5 @@ func handle_response(response):
 	else:
 		Gs.emit_signal("get_nonce")
 		var popup = get_parent().get_node("Fail")
+		popup.text = "nonce error"
 		popup.visible = true

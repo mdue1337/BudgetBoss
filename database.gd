@@ -27,6 +27,8 @@ func _ready():
 	Gs.connect("get_user_achievements", self, "get_user_achievements")
 	Gs.connect("load_game_five", self, "load_game_five")
 	Gs.connect("get_nonce", self, "request_nonce")
+	
+	# Login nonce get
 	request_nonce()
 
 func temp(response):

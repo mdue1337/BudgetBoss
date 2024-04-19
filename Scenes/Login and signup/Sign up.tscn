@@ -132,7 +132,6 @@ texture_hover = ExtResource( 1 )
 script = ExtResource( 5 )
 
 [node name="Fail" type="AcceptDialog" parent="."]
-visible = true
 margin_left = 559.0
 margin_top = 294.0
 margin_right = 642.0
