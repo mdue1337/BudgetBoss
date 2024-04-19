@@ -70,9 +70,9 @@ valign = 1
 visible = false
 margin_left = 253.0
 margin_top = 225.0
-margin_right = 595.0
-margin_bottom = 387.0
-color = Color( 0, 0, 0, 0.588235 )
+margin_right = 613.0
+margin_bottom = 453.0
+color = Color( 0, 0, 0, 0.658824 )
 
 [node name="GameWarning" type="Label" parent="TextureRect/GameWarning"]
 margin_left = 2.35152

@@ -264,6 +264,17 @@ align = 1
 valign = 1
 autowrap = true
 
+[node name="Label" type="Label" parent="."]
+margin_left = 444.0
+margin_top = 438.0
+margin_right = 713.0
+margin_bottom = 640.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = ExtResource( 5 )
+text = "Tryk på bogen for at læse tidligere viden"
+align = 1
+autowrap = true
+
 [connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="ColorRect/bookbutton" to="." method="_on_bookbutton_pressed"]
 [connection signal="pressed" from="EconomyKnowledge/Inflation/TextureButton" to="EconomyKnowledge/Inflation/TextureButton" method="_on_TextureButton_pressed"]

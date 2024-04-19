@@ -19,6 +19,7 @@ func _on_Button_pressed():
 		var popup = get_parent().get_node("Fail")
 		popup.visible = true
 		print("Please provide valid username, password and email")
+		Gs.emit_signal("get_nonce")
 
 func handle_response(response):
 	if response.status != "no_return":
