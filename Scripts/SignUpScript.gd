@@ -22,7 +22,7 @@ func _on_Button_pressed():
 
 func handle_response(response):
 	if response.status != "no_return":
-		Gs.userId = int(response.response["UserId"]);
+		Gs.userId = int(response.response.data[0]["Id"]);
 		var success = get_parent().get_node("Win")
 		success.visible = true
 		get_owner().visible = false

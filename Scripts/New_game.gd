@@ -4,6 +4,7 @@ var pressed_once = false;
 
 func _on_New_game_pressed():
 	if pressed_once:
+		print(Gs.userId)
 		Gs.emit_signal("create_game")
 		Gs.connect("response", self, "handle_response")
 	else:

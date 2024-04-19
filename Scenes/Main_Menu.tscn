@@ -38,7 +38,7 @@ margin_right = 238.261
 margin_bottom = 122.288
 theme = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 12 )
 text = "New game"
 
 [node name="New game" type="TextureButton" parent="TextureRect"]
