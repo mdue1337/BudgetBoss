@@ -49,17 +49,5 @@ func updateDays(data):
 		else:
 			$VBoxContainer3/Label.text = $VBoxContainer3/Label.text + "\n\n\n\n" + label_text
 	
-	#dynamic show boxes
-	if count > 0:
-		get_node("TextureRect").visible = true
-	if count > 1:
-		get_node("TextureRect2").visible = true
-	if count > 2:
-		get_node("TextureRect3").visible = true
-	if count > 3:
-		get_node("TextureRect4").visible = true
-	if count > 4:
-		get_node("TextureRect5").visible = true
-	
 	daysUpdated = true
 	secondQuery()
